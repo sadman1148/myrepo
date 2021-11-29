@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/saku_720p"
     tools:context=".MainActivity">
 
     <TextView
@@ -14,7 +13,6 @@
         android:layout_marginTop="20dp"
         android:text="@string/title"
         android:textAlignment="center"
-        android:textColor="@color/white"
         android:textSize="30sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -27,8 +25,6 @@
         android:layout_marginTop="50dp"
         android:ems="10"
         android:hint="First number"
-        android:textColorHint="@color/white"
-        android:textColor="@color/white"
         android:inputType="numberDecimal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -40,8 +36,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:ems="10"
-        android:textColorHint="@color/white"
-        android:textColor="@color/white"
         android:hint="Second number"
         android:inputType="numberDecimal"
         app:layout_constraintEnd_toEndOf="@+id/fn"
