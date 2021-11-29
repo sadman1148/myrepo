@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">test</string>
+    <string name="title">Debugger Test</string>
+    <string name="desc">Enter values below to add them...</string>
+</resources>
