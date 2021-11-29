@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".skills">
+
+    <TextView
+        android:id="@+id/skillhead"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="My Skills"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/divider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/java_logo"
+        android:layout_width="62dp"
+        android:layout_height="63dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/skillhead"
+        app:srcCompat="@drawable/java_logo" />
+
+    <ImageView
+        android:id="@+id/js_logo"
+        android:layout_width="47dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintEnd_toEndOf="@+id/java_logo"
+        app:layout_constraintStart_toStartOf="@+id/java_logo"
+        app:layout_constraintTop_toBottomOf="@+id/java_logo"
+        app:srcCompat="@drawable/js_logo" />
+
+    <TextView
+        android:id="@+id/sk1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="Java"
+        app:layout_constraintBottom_toBottomOf="@+id/java_logo"
+        app:layout_constraintStart_toEndOf="@+id/java_logo"
+        app:layout_constraintTop_toTopOf="@+id/java_logo" />
+
+    <TextView
+        android:id="@+id/sk3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="JavaScript"
+        app:layout_constraintBottom_toBottomOf="@+id/js_logo"
+        app:layout_constraintStart_toEndOf="@+id/java_logo"
+        app:layout_constraintTop_toTopOf="@+id/js_logo" />
+
+
+    <ImageView
+        android:id="@+id/python_logo"
+        android:layout_width="62dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/skillhead"
+        app:srcCompat="@drawable/py_logo" />
+
+    <TextView
+        android:id="@+id/sk2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="Python"
+        app:layout_constraintBottom_toBottomOf="@+id/python_logo"
+        app:layout_constraintStart_toEndOf="@+id/python_logo"
+        app:layout_constraintTop_toTopOf="@+id/python_logo" />
+
+    <ImageView
+        android:id="@+id/html_logo"
+        android:layout_width="62dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/python_logo"
+        app:layout_constraintStart_toStartOf="@+id/python_logo"
+        app:layout_constraintTop_toBottomOf="@+id/python_logo"
+        app:srcCompat="@drawable/html_logo" />
+
+    <TextView
+        android:id="@+id/sk4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="HTML"
+        app:layout_constraintBottom_toBottomOf="@+id/html_logo"
+        app:layout_constraintStart_toEndOf="@+id/html_logo"
+        app:layout_constraintTop_toTopOf="@+id/html_logo" />
+
+    <ImageView
+        android:id="@+id/cpp_logo"
+        android:layout_width="62dp"
+        android:layout_height="63dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/js_logo"
+        app:srcCompat="@drawable/cpp_logo" />
+
+    <TextView
+        android:id="@+id/sk5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="C++"
+        app:layout_constraintBottom_toBottomOf="@+id/cpp_logo"
+        app:layout_constraintStart_toEndOf="@+id/cpp_logo"
+        app:layout_constraintTop_toTopOf="@+id/cpp_logo" />
+
+    <ImageView
+        android:id="@+id/css_logo"
+        android:layout_width="62dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/html_logo"
+        app:layout_constraintStart_toStartOf="@+id/html_logo"
+        app:layout_constraintTop_toBottomOf="@+id/html_logo"
+        app:srcCompat="@drawable/css_logo" />
+
+    <TextView
+        android:id="@+id/sk6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="CSS"
+        app:layout_constraintBottom_toBottomOf="@+id/css_logo"
+        app:layout_constraintStart_toEndOf="@+id/css_logo"
+        app:layout_constraintTop_toTopOf="@+id/css_logo" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="358dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="60dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/php_logo"
+        android:layout_width="62dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintEnd_toEndOf="@+id/cpp_logo"
+        app:layout_constraintStart_toStartOf="@+id/cpp_logo"
+        app:layout_constraintTop_toBottomOf="@+id/cpp_logo"
+        app:srcCompat="@drawable/php_logo" />
+
+    <TextView
+        android:id="@+id/sk7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="php"
+        app:layout_constraintBottom_toBottomOf="@+id/php_logo"
+        app:layout_constraintStart_toEndOf="@+id/php_logo"
+        app:layout_constraintTop_toTopOf="@+id/php_logo" />
+
+    <ImageView
+        android:id="@+id/ps_logo"
+        android:layout_width="62dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/css_logo"
+        app:layout_constraintStart_toStartOf="@+id/css_logo"
+        app:layout_constraintTop_toBottomOf="@+id/css_logo"
+        app:srcCompat="@drawable/ps_logo" />
+
+    <TextView
+        android:id="@+id/sk8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="Photoshop"
+        app:layout_constraintBottom_toBottomOf="@+id/ps_logo"
+        app:layout_constraintStart_toEndOf="@+id/ps_logo"
+        app:layout_constraintTop_toTopOf="@+id/ps_logo" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

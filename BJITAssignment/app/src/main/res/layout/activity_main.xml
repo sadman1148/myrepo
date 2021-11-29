@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="111dp"
+            android:layout_height="112dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/small" />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="30dp"
+            android:text="Sadman Alam Reshad"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/rank"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="7dp"
+            android:text="Software Engineer"
+            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintTop_toBottomOf="@+id/name" />
+
+        <TextView
+            android:id="@+id/company"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="1dp"
+            android:text="BJIT Limited"
+            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintTop_toBottomOf="@+id/dept" />
+
+        <TextView
+            android:id="@+id/dept"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="1dp"
+            android:text="ED4 - Android"
+            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintTop_toBottomOf="@+id/rank" />
+
+        <TextView
+            android:id="@+id/workhead"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="40dp"
+            android:text="Work Experience"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+        <TextView
+            android:id="@+id/work1date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="15dp"
+            android:text="November 2021 - February 2022"
+            android:textSize="10sp"
+            android:textStyle="italic"
+            app:layout_constraintStart_toEndOf="@+id/bjit_logo"
+            app:layout_constraintTop_toBottomOf="@+id/workhead" />
+
+        <TextView
+            android:id="@+id/work1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="Trainee Software Engineer\nBJIT Academy"
+            app:layout_constraintStart_toEndOf="@+id/bjit_logo"
+            app:layout_constraintTop_toBottomOf="@+id/work1date" />
+
+        <TextView
+            android:id="@+id/work2date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="28dp"
+            android:text="September 2021 - November 2021"
+            android:textSize="10sp"
+            android:textStyle="italic"
+            app:layout_constraintStart_toEndOf="@+id/pis_logo"
+            app:layout_constraintTop_toBottomOf="@+id/work1" />
+
+        <TextView
+            android:id="@+id/work2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="Front End Web Development Intern\nProficient Information Systems"
+            app:layout_constraintStart_toEndOf="@+id/pis_logo"
+            app:layout_constraintTop_toBottomOf="@+id/work2date" />
+
+        <ImageView
+            android:id="@+id/bjit_logo"
+            android:layout_width="62dp"
+            android:layout_height="63dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/workhead"
+            app:srcCompat="@drawable/bjit_logo" />
+
+        <ImageView
+            android:id="@+id/pis_logo"
+            android:layout_width="62dp"
+            android:layout_height="63dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bjit_logo"
+            app:srcCompat="@drawable/pis_logo" />
+
+        <TextView
+            android:id="@+id/eduhead"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="50dp"
+            android:text="Education"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pis_logo" />
+
+        <TextView
+            android:id="@+id/edu1date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="15dp"
+            android:text="January 2017 - September 2021"
+            android:textSize="10sp"
+            android:textStyle="italic"
+            app:layout_constraintStart_toEndOf="@+id/bracu_logo"
+            app:layout_constraintTop_toBottomOf="@+id/eduhead" />
+
+        <TextView
+            android:id="@+id/edu1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="BSC in Computer Science and Engineering\nBRAC University"
+            app:layout_constraintStart_toEndOf="@+id/bracu_logo"
+            app:layout_constraintTop_toBottomOf="@+id/edu1date" />
+
+        <TextView
+            android:id="@+id/edu2date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="28dp"
+            android:text="2015 - 2016"
+            android:textSize="10sp"
+            android:textStyle="italic"
+            app:layout_constraintStart_toEndOf="@+id/mc_logo"
+            app:layout_constraintTop_toBottomOf="@+id/edu1" />
+
+        <TextView
+            android:id="@+id/edu3date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="28dp"
+            android:text="2013 - 2014"
+            android:textSize="10sp"
+            android:textStyle="italic"
+            app:layout_constraintStart_toEndOf="@+id/ms_logo"
+            app:layout_constraintTop_toBottomOf="@+id/edu2" />
+
+        <TextView
+            android:id="@+id/edu2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="Higher Secondary Certificate\nMilestone School and College"
+            app:layout_constraintStart_toEndOf="@+id/mc_logo"
+            app:layout_constraintTop_toBottomOf="@+id/edu2date" />
+
+        <TextView
+            android:id="@+id/edu3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="Secondary School Certificate\nMilestone School and College"
+            app:layout_constraintStart_toEndOf="@+id/ms_logo"
+            app:layout_constraintTop_toBottomOf="@+id/edu3date" />
+
+        <ImageView
+            android:id="@+id/bracu_logo"
+            android:layout_width="62dp"
+            android:layout_height="63dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/eduhead"
+            app:srcCompat="@drawable/bracu_logo" />
+
+        <ImageView
+            android:id="@+id/mc_logo"
+            android:layout_width="62dp"
+            android:layout_height="63dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bracu_logo"
+            app:srcCompat="@drawable/mc_logo" />
+
+        <ImageView
+            android:id="@+id/ms_logo"
+            android:layout_width="62dp"
+            android:layout_height="63dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mc_logo"
+            app:srcCompat="@drawable/ms_logo" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_height="45dp"
+            android:layout_width="110dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="40dp"
+            android:backgroundTint="#1ac447"
+            android:onClick="goToSkills"
+            android:text="Skills"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ms_logo" />
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_height="45dp"
+            android:layout_width="110dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="50dp"
+            android:backgroundTint="#1ac447"
+            android:onClick="goToContact"
+            android:text="Contact"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ms_logo" />
+
+        <TextView
+            android:id="@+id/foot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="© 2021 BJIT. All rights reserved."
+            android:textSize="8sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button" />
+
+        <View
+            android:id="@+id/divider2"
+            android:layout_width="358dp"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintBottom_toTopOf="@+id/workhead"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+        <View
+            android:id="@+id/divider3"
+            android:layout_width="358dp"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintBottom_toTopOf="@+id/eduhead"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pis_logo" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
