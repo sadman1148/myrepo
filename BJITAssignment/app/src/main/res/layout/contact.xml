@@ -7,7 +7,6 @@
     tools:context=".contact">
 
     <ImageView
-        android:onClick="callThisGuy"
         android:id="@+id/imageView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -89,5 +88,41 @@
         app:layout_constraintBottom_toBottomOf="@+id/imageView4"
         app:layout_constraintStart_toEndOf="@+id/imageView4"
         app:layout_constraintTop_toTopOf="@+id/imageView4" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Mail Me"
+        android:onClick="mailThisGuy"
+        android:backgroundTint="#1ac447"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="15dp"
+        android:text="Call Me"
+        android:onClick="callThisGuy"
+        android:backgroundTint="#1ac447"
+        app:layout_constraintBottom_toBottomOf="@+id/button2"
+        app:layout_constraintEnd_toStartOf="@+id/button2"
+        app:layout_constraintTop_toTopOf="@+id/button2" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:text="Find Me"
+        android:onClick="findThisGuy"
+        android:backgroundTint="#1ac447"
+        app:layout_constraintBottom_toBottomOf="@+id/button2"
+        app:layout_constraintStart_toEndOf= "@+id/button2"
+        app:layout_constraintTop_toTopOf="@+id/button2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
