@@ -14,9 +14,10 @@ import android.widget.Switch;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.switchmaterial.SwitchMaterial;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    private Switch trigger;
+    private SwitchMaterial trigger;
     private CheckBox checkBox;
     private RadioButton radioButton;
     private Button normal, outlined, text, toggle;
