@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/button_top_margin"
-        android:fontFamily="@font/lobster"
+        android:fontFamily="@font/cabin"
         android:text="@string/title"
         android:textSize="@dimen/titlesize"
         app:layout_constraintEnd_toEndOf="parent"

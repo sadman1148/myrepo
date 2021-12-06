@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/java"
+        android:title="@string/java" />
+    <item android:id="@+id/kotlin"
+        android:title="@string/kotlin" />
+    <item android:id="@+id/dart"
+        android:title="@string/dart" />
+    <item android:id="@+id/c"
+        android:title="@string/c" />
+    <item android:id="@+id/html"
+        android:title="@string/html" />
+</menu>
