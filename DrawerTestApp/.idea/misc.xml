@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/sadma/Documents/GitHub/myrepo/DrawerTestApp/app/src/main/res/layout/activity_1.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/sadma/Documents/GitHub/myrepo/DrawerTestApp/app/src/main/res/layout/activity_2.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/sadma/Documents/GitHub/myrepo/DrawerTestApp/app/src/main/res/layout/activity_3.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/sadma/Documents/GitHub/myrepo/DrawerTestApp/app/src/main/res/layout/activity_drawer.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/sadma/Documents/GitHub/myrepo/DrawerTestApp/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/sadma/Documents/GitHub/myrepo/DrawerTestApp/app/src/main/res/layout/activity_popup.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/sadma/Documents/GitHub/myrepo/DrawerTestApp/app/src/main/res/layout/app_bar_drawer.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/sadma/Documents/GitHub/myrepo/DrawerTestApp/app/src/main/res/layout/content_drawer.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/sadma/Documents/GitHub/myrepo/DrawerTestApp/app/src/main/res/layout/customfrag1_fragment.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/sadma/Documents/GitHub/myrepo/DrawerTestApp/app/src/main/res/layout/customfrag2_fragment.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/sadma/Documents/GitHub/myrepo/DrawerTestApp/app/src/main/res/layout/customfrag3_fragment.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/sadma/Documents/GitHub/myrepo/DrawerTestApp/app/src/main/res/layout/fragment_gallery.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/sadma/Documents/GitHub/myrepo/DrawerTestApp/app/src/main/res/layout/fragment_home.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/sadma/Documents/GitHub/myrepo/DrawerTestApp/app/src/main/res/layout/fragment_slideshow.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/sadma/Documents/GitHub/myrepo/DrawerTestApp/app/src/main/res/layout/nav_header_drawer.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/sadma/Documents/GitHub/myrepo/DrawerTestApp/app/src/main/res/menu/activity_main_drawer.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/sadma/Documents/GitHub/myrepo/DrawerTestApp/app/src/main/res/menu/drawer.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/sadma/Documents/GitHub/myrepo/DrawerTestApp/app/src/main/res/menu/popup_items.xml" value="0.19427083333333334" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

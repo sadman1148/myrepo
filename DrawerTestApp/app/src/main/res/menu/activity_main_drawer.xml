@@ -16,17 +16,22 @@
             android:id="@+id/nav_slideshow"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="@string/menu_slideshow" />
-        <item
-            android:id="@+id/custom1"
-            android:icon="@android:drawable/ic_media_play"
-            android:title="@string/custom_item_1" />
-        <item
-            android:id="@+id/custom2"
-            android:icon="@android:drawable/ic_media_play"
-            android:title="@string/custom_item_2" />
-        <item
-            android:id="@+id/custom"
-            android:icon="@android:drawable/ic_media_play"
-            android:title="@string/custom_item_3" />
     </group>
+
+    <item android:title="Custom Fragments">
+        <menu>
+            <item
+                android:id="@+id/customfrag1"
+                android:icon="@android:drawable/ic_media_play"
+                android:title="@string/custom_item_1" />
+            <item
+                android:id="@+id/customfrag2"
+                android:icon="@android:drawable/ic_media_play"
+                android:title="@string/custom_item_2" />
+            <item
+                android:id="@+id/customfrag3"
+                android:icon="@android:drawable/ic_media_play"
+                android:title="@string/custom_item_3" />
+        </menu>
+    </item>
 </menu>

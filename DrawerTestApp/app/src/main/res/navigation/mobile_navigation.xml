@@ -22,4 +22,19 @@
         android:name="com.redenvy.drawertestapp.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
+    <fragment
+        android:id="@+id/customfrag1"
+        android:name="com.redenvy.drawertestapp.ui.customfrag1.customfrag1"
+        android:label="@string/label_frag1"
+        tools:layout="@layout/customfrag1_fragment" />
+    <fragment
+        android:id="@+id/customfrag2"
+        android:name="com.redenvy.drawertestapp.ui.customfrag2.customfrag2"
+        android:label="@string/label_frag2"
+        tools:layout="@layout/customfrag2_fragment" />
+    <fragment
+        android:id="@+id/customfrag3"
+        android:name="com.redenvy.drawertestapp.ui.customfrag3.customfrag3"
+        android:label="@string/label_frag3"
+        tools:layout="@layout/customfrag3_fragment" />
 </navigation>
