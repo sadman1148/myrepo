@@ -21,6 +21,11 @@
         <entry key="..\:/Users/sadma/Documents/GitHub/myrepo/DrawerTestApp/app/src/main/res/menu/activity_main_drawer.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/sadma/Documents/GitHub/myrepo/DrawerTestApp/app/src/main/res/menu/drawer.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/sadma/Documents/GitHub/myrepo/DrawerTestApp/app/src/main/res/menu/popup_items.xml" value="0.19427083333333334" />
+        <entry key="app/src/main/res/layout/customfrag1_fragment.xml" value="0.19322916666666667" />
+        <entry key="app/src/main/res/layout/customfrag2_fragment.xml" value="0.19322916666666667" />
+        <entry key="app/src/main/res/layout/customfrag3_fragment.xml" value="0.19322916666666667" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.19322916666666667" />
+        <entry key="app/src/main/res/layout/sample_adapter.xml" value="0.6836461126005362" />
       </map>
     </option>
   </component>

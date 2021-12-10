@@ -9,4 +9,7 @@
     <dimen name="buttonWidth">120dp</dimen>
     <dimen name="titleSize">20sp</dimen>
     <dimen name="textSize">20sp</dimen>
+    <dimen name="text20sp">20sp</dimen>
+    <dimen name="recMargin">0dp</dimen>
+    <dimen name="divider">10dp</dimen>
 </resources>

@@ -35,4 +35,7 @@
     <string name="label_frag3">Fragment 3</string>
     <string name="label_frag2">Fragment 2</string>
     <string name="label_frag1">Fragment 1</string>
+    <string name="exitTag">Do you want to exit the Drawer?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
 </resources>

@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.redenvy.drawertestapp.R;
 import com.redenvy.drawertestapp.databinding.Customfrag1FragmentBinding;
@@ -32,6 +33,9 @@ public class customfrag2 extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
+
+        Toast.makeText(getContext(), "Custom Frag 2 Selected", Toast.LENGTH_SHORT).show();
+
         mViewModel = new ViewModelProvider(this).get(Customfrag2ViewModel.class);
 
         binding = Customfrag2FragmentBinding.inflate(inflater, container, false);

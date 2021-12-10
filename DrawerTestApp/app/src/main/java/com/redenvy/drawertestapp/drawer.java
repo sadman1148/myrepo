@@ -67,11 +67,11 @@ public class drawer extends AppCompatActivity {
                 return true;
             case R.id.action_logout:
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                builder.setMessage("Do you want to exit the Drawer?");
+                builder.setMessage(R.string.exitTag);
                 // if user presses "Yes", then he is allowed to exit from application
-                builder.setPositiveButton("Yes", (dialog, which) -> finish());
+                builder.setPositiveButton(R.string.yes, (dialog, which) -> finish());
                 // if user selects "No", just cancel this dialog and continue with app
-                builder.setNegativeButton("No", (dialog, which) -> dialog.cancel());
+                builder.setNegativeButton(R.string.no, (dialog, which) -> dialog.cancel());
                 builder.create().show();
                 return true;
         }
