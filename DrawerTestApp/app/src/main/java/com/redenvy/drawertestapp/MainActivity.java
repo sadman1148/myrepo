@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Switch;
+import android.widget.Toast;
 
 import com.redenvy.drawertestapp.databinding.ActivityMainBinding;
 
@@ -27,6 +28,9 @@ private ActivityMainBinding binder;
                 break;
             case R.id.drawer:
                 startActivity(new Intent(MainActivity.this, drawer.class));
+                break;
+            case R.id.img:
+                startActivity(new Intent(MainActivity.this, images.class));
                 break;
         }
     }

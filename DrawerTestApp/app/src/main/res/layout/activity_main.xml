@@ -34,4 +34,13 @@
         android:layout_marginTop="@dimen/topMarginButton"
         android:text="@string/drawer" />
 
+    <Button
+        android:id="@+id/img"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="@dimen/buttonWidth"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/topMarginButton"
+        android:text="@string/images" />
+
 </androidx.appcompat.widget.LinearLayoutCompat>
