@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DrawerTestApp">
         <activity
-            android:name=".Images"
+            android:name=".images"
             android:exported="false" />
         <activity
             android:name=".Activity3"

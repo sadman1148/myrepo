@@ -3,7 +3,6 @@ package com.redenvy.drawertestapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.view.View;
 
 import com.redenvy.drawertestapp.databinding.ActivityImagesBinding;
 
