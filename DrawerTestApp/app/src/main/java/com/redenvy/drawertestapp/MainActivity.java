@@ -20,19 +20,18 @@ private ActivityMainBinding binder;
         setContentView(binder.getRoot());
         binder.popup.setOnClickListener(this);
         binder.drawer.setOnClickListener(this);
+        binder.img.setOnClickListener(this);
     }
     @Override
     public void onClick(View view){
-        Log.e("sadman",""+view.getId());
         switch (view.getId()){
             case R.id.popup:
                 startActivity(new Intent(MainActivity.this, Popup.class));
                 break;
             case R.id.drawer:
-                startActivity(new Intent(MainActivity.this, images.class));
+                startActivity(new Intent(MainActivity.this, drawer.class));
                 break;
             case R.id.img:
-                Toast.makeText(this, "works", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(MainActivity.this, images.class));
                 break;
         }

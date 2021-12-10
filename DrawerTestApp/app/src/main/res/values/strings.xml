@@ -39,4 +39,5 @@
     <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="images">Images</string>
+    <string name="custom_button">Custom Button</string>
 </resources>
