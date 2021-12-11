@@ -21,6 +21,7 @@ private ActivityMainBinding binder;
         binder.popup.setOnClickListener(this);
         binder.drawer.setOnClickListener(this);
         binder.img.setOnClickListener(this);
+        binder.tabs.setOnClickListener(this);
     }
     @Override
     public void onClick(View view){
@@ -33,6 +34,9 @@ private ActivityMainBinding binder;
                 break;
             case R.id.img:
                 startActivity(new Intent(MainActivity.this, images.class));
+                break;
+            case R.id.tabs:
+                startActivity(new Intent(MainActivity.this, tabs.class));
                 break;
         }
     }

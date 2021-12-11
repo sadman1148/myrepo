@@ -40,4 +40,10 @@
     <string name="no">No</string>
     <string name="images">Images</string>
     <string name="custom_button">Custom Button</string>
+    <string name="tab_view">Tab-view</string>
+    <string name="tabs_title_frag1">Frag 1</string>
+    <string name="tabs_title_frag2">Frag 2</string>
+    <string name="tabs_title_frag3">Frag 3</string>
+    <string name="tabs_title_frag4">Frag 4</string>
+    <string name="tabs_title_frag5">Frag 5</string>
 </resources>
