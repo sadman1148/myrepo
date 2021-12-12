@@ -46,4 +46,13 @@
     <string name="tabs_title_frag3">Frag 3</string>
     <string name="tabs_title_frag4">Frag 4</string>
     <string name="tabs_title_frag5">Frag 5</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="string">String</string>
+    <string name="integer">Integer</string>
+    <string name="bool">Boolean</string>
+    <string name="label_frag4">Fragment 4</string>
+    <string name="label_frag5">Fragment 5</string>
+    <string name="character">Char</string>
+    <string name="doub">Double</string>
 </resources>

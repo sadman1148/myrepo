@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".frag4">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/topMarginButton"
+        android:text="@string/label_frag4"
+        android:textSize="@dimen/textSize" />
+
+    <Button
+        android:id="@+id/frag4Butt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/topMarginButton"
+        android:width="@dimen/buttonWidth"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:text="@string/character" />
+
+    <TextView
+        android:id="@+id/frag4Txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/topMarginButton"
+        android:text="" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>
