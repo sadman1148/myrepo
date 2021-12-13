@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">映画リスト</string>
+    <string name="text1">真の探偵\nシリーズは謎を解く2人の探偵の分割されたタイムラインを特徴とします。</string>
+    <string name="text2">スパイダーマン-帰郷\nスパイダーマンがマーベルシネマティックユニバースに参加します。</string>
+    <string name="text3">スパイダーマン-ファーフロムホーム\nスパイダーマンは家から遠く離れますが、問題が続きます。</string>
+    <string name="text4">スパイダーマン-ノーウェイホーム\nトムホランドはトビーとアンドリューとチームを組み、シニスターシックスを倒します。</string>
+</resources>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="poster_width">136dp</dimen>
+    <dimen name="poster_height">200dp</dimen>
+    <dimen name="dp20">20dp</dimen>
+    <dimen name="dp150horizontal">250dp</dimen>
+</resources>

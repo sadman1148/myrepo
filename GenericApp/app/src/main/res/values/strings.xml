@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Movie List</string>
+    <string name="text1">True Detective\nThe series features a split timeline of two detectives solving a mystery.</string>
+    <string name="text2">Spiderman - Homecoming\nSpiderman joins the Marvel Cinematic Universe.</string>
+    <string name="text3">Spiderman - Far From Home\nSpiderman goes far away from home, but trouble follows.</string>
+    <string name="text4">Spiderman - No Way Home\nTom Holland teams up with Tobey and Andrew to take down the Sinister Six.</string>
+</resources>
