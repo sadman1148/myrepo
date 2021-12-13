@@ -56,4 +56,5 @@
     <string name="character">Char</string>
     <string name="doub">Double</string>
     <string name="talk_to_frags">Talk to fragments</string>
+    <string name="trans">Transition</string>
 </resources>

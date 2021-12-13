@@ -52,4 +52,13 @@
         android:layout_marginTop="@dimen/topMarginButton"
         android:text="@string/tab_view" />
 
+    <Button
+        android:id="@+id/trans"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="@dimen/buttonWidth"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/topMarginButton"
+        android:text="@string/trans" />
+
 </androidx.appcompat.widget.LinearLayoutCompat>

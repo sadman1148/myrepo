@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DrawerTestApp">
         <activity
+            android:name=".transition"
+            android:exported="false" />
+        <activity
             android:name=".tabs"
             android:exported="false" />
         <activity

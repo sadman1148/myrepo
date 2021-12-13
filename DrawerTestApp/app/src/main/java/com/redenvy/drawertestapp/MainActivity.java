@@ -38,6 +38,11 @@ private ActivityMainBinding binder;
             case R.id.tabs:
                 startActivity(new Intent(MainActivity.this, tabs.class));
                 break;
+            case R.id.trans:
+                startActivity(new Intent(MainActivity.this, transition.class));
+                break;
+            default:
+                break;
         }
     }
 }
