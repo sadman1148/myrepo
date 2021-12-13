@@ -16,6 +16,7 @@ import com.redenvy.drawertestapp.databinding.FragmentFrag1Binding;
 
 public class frag1 extends Fragment {
     private Button b;
+    private TextView t;
     private tabs sender;
 
     public frag1() { }
@@ -45,6 +46,8 @@ public class frag1 extends Fragment {
                 sender.receiveData("A String",1);
             }
         });
+        t = getActivity().findViewById(R.id.frag1Txt);
+        t.setText("Activity says: "+sender.sendData(1));
     }
 
 }

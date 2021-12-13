@@ -7,9 +7,14 @@ import android.os.Bundle;
 import com.google.android.material.tabs.TabLayout;
 import com.redenvy.drawertestapp.databinding.ActivityTabsBinding;
 
-public class tabs extends AppCompatActivity implements dataPasser {
+public class tabs extends AppCompatActivity {
     private ActivityTabsBinding binding;
-    private Bundle bundle;
+    String f1m = "Activity to Fragment 1, do you copy? Over.";
+    int f2m = 360;
+    boolean f3m = false;
+    char f4m = 'S';
+    double f5m = 11.432;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,9 +44,23 @@ public class tabs extends AppCompatActivity implements dataPasser {
             @Override
             public void onTabReselected(TabLayout.Tab tab){}
         });
+    }
 
-        // secret messages
-        String f1m = "Activity to Fragment 1, do you copy? Over.";
+    public Object sendData(int frag){
+        switch (frag){
+            case 1:
+                return (String)f1m;
+            case 2:
+                return (int)f2m;
+            case 3:
+                return (boolean)f3m;
+            case 4:
+                return (char)f4m;
+            case 5:
+                return (double)f5m;
+            default:
+                return "No Data Found";
+        }
     }
 
     public void receiveData(Object obj,int fragmentNo) {

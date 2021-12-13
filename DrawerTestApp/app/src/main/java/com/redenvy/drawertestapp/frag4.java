@@ -9,8 +9,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class frag4 extends Fragment {
+    private TextView t;
     private Button b;
     private tabs sender;
     public frag4() {
@@ -41,5 +43,7 @@ public class frag4 extends Fragment {
                 sender.receiveData('X',4);
             }
         });
+        t = getActivity().findViewById(R.id.frag4Txt);
+        t.setText("Activity says: "+sender.sendData(4));
     }
 }
