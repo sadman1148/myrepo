@@ -22,6 +22,7 @@ private ActivityMainBinding binder;
         binder.drawer.setOnClickListener(this);
         binder.img.setOnClickListener(this);
         binder.tabs.setOnClickListener(this);
+        binder.trans.setOnClickListener(this);
     }
     @Override
     public void onClick(View view){

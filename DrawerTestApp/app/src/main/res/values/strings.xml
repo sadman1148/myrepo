@@ -46,8 +46,6 @@
     <string name="tabs_title_frag3">Frag 3</string>
     <string name="tabs_title_frag4">Frag 4</string>
     <string name="tabs_title_frag5">Frag 5</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="string">String</string>
     <string name="integer">Integer</string>
     <string name="bool">Boolean</string>
@@ -57,4 +55,6 @@
     <string name="doub">Double</string>
     <string name="talk_to_frags">Talk to fragments</string>
     <string name="trans">Transition</string>
+    <string name="sadman_details">Sadman Alam Reshad\nSoftware Engineer - BJIT Limited\n+8801994660589\nUttara, Dhaka.</string>
+    <string name="eftekhar_details">Eftekharul Islam\nSoftware Engineer - BJIT Limited\n+8801714206900\nSomewhere, Bangladesh.</string>
 </resources>

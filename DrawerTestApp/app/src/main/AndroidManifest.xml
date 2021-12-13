@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DrawerTestApp">
         <activity
+            android:name=".eftekhar_trans"
+            android:exported="false" />
+        <activity
+            android:name=".sadman_trans"
+            android:exported="false" />
+        <activity
             android:name=".transition"
             android:exported="false" />
         <activity

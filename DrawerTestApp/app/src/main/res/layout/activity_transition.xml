@@ -6,4 +6,86 @@
     android:layout_height="match_parent"
     tools:context=".transition">
 
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/linlay1BG"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/linlayBGheight"
+        android:layout_marginHorizontal="@dimen/linlayBGwidth"
+        android:layout_marginTop="98dp"
+        android:background="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/linlay1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/content_margin"
+        android:layout_marginTop="@dimen/content_top_margin"
+        android:background="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/trans_pp1"
+            android:layout_width="@dimen/small_PP_size"
+            android:layout_height="@dimen/small_PP_size"
+            android:layout_marginStart="@dimen/dp20"
+            android:padding="@dimen/padding10dp"
+            android:transitionName="profilePic1"
+            app:srcCompat="@drawable/small" />
+
+        <TextView
+            android:id="@+id/trans_name_text1"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/h70dp"
+            android:layout_marginStart="@dimen/topMarginButton"
+            android:gravity="center"
+            android:text="Sadman Alam Reshad" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/linlay2BG"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/linlayBGheight"
+        android:layout_marginHorizontal="@dimen/linlayBGwidth"
+        android:layout_marginTop="38dp"
+        android:background="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/linlay1"
+        app:layout_constraintStart_toStartOf="@+id/linlay1"
+        app:layout_constraintTop_toBottomOf="@+id/linlay1" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/linlay2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/content_margin"
+        android:layout_marginTop="@dimen/content_margin"
+        android:background="@android:color/white"
+        app:layout_constraintEnd_toEndOf="@+id/linlay1"
+        app:layout_constraintStart_toStartOf="@+id/linlay1"
+        app:layout_constraintTop_toBottomOf="@+id/linlay1">
+
+        <ImageView
+            android:id="@+id/trans_pp2"
+            android:layout_width="@dimen/small_PP_size"
+            android:layout_height="@dimen/small_PP_size"
+            android:layout_marginStart="@dimen/dp20"
+            android:padding="10dp"
+            android:transitionName="profilePic2"
+            app:srcCompat="@drawable/eftekhar_vai" />
+
+        <TextView
+            android:id="@+id/trans_name_text2"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/h70dp"
+            android:layout_marginStart="@dimen/topMarginButton"
+            android:gravity="center"
+            android:text="Eftekharul Islam" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
