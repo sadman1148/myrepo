@@ -55,6 +55,10 @@
     <string name="doub">Double</string>
     <string name="talk_to_frags">Talk to fragments</string>
     <string name="trans">Transition</string>
-    <string name="sadman_details">Sadman Alam Reshad\nSoftware Engineer - BJIT Limited\n+8801994660589\nUttara, Dhaka.</string>
-    <string name="eftekhar_details">Eftekharul Islam\nSoftware Engineer - BJIT Limited\n+8801714206900\nSomewhere, Bangladesh.</string>
+    <string name="sadman_details">Software Engineer - BJIT Limited\n+8801994660589\nUttara, Dhaka.</string>
+    <string name="asef_details">Software Engineer - BJIT Limited\n+8801769696969\nToo tired, To search.</string>
+    <string name="eftekhar_details">Software Engineer - BJIT Limited\n+8801714206900\nSomewhere, Bangladesh.</string>
+    <string name="sadman_name">Sadman Alam</string>
+    <string name="asef_name">Asef Hossain</string>
+    <string name="eftekhar_name">Eftekharul Islam</string>
 </resources>

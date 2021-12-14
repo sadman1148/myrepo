@@ -12,13 +12,15 @@
     <dimen name="text20sp">20sp</dimen>
     <dimen name="recMargin">0dp</dimen>
     <dimen name="divider">10dp</dimen>
-    <dimen name="content_margin">40dp</dimen>
+    <dimen name="content_margin">70dp</dimen>
     <dimen name="content_top_margin">100dp</dimen>
     <dimen name="dp20">20dp</dimen>
     <dimen name="padding10dp">10dp</dimen>
     <dimen name="h70dp">70dp</dimen>
     <dimen name="small_PP_size">70dp</dimen>
     <dimen name="big_PP_size">200dp</dimen>
-    <dimen name="linlayBGheight">74dp</dimen>
-    <dimen name="linlayBGwidth">38dp</dimen>
+    <dimen name="dp2">2dp</dimen>
+    <dimen name="dp5">5dp</dimen>
+    <dimen name="dp10">10dp</dimen>
+    <dimen name="dp40">40dp</dimen>
 </resources>

@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DrawerTestApp">
         <activity
+            android:name=".asef_trans"
+            android:exported="false" />
+        <activity
             android:name=".eftekhar_trans"
             android:exported="false" />
         <activity

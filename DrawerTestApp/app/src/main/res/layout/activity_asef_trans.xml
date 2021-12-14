@@ -4,39 +4,39 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".sadman_trans">
+    tools:context=".asef_trans">
 
     <ImageView
-        android:id="@+id/sadman_pp"
+        android:id="@+id/asef_pp"
         android:layout_width="@dimen/big_PP_size"
         android:layout_height="@dimen/big_PP_size"
         android:layout_marginTop="@dimen/content_margin"
-        android:transitionName="profilePic1"
+        android:transitionName="profilePic3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/small" />
+        app:srcCompat="@drawable/asef" />
 
     <TextView
-        android:id="@+id/sadman_text"
+        android:id="@+id/asef_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dp40"
-        android:text="@string/sadman_name"
+        android:text="@string/asef_name"
         android:textSize="@dimen/textSize"
-        android:transitionName="name1"
-        app:layout_constraintEnd_toEndOf="@+id/sadman_pp"
-        app:layout_constraintStart_toStartOf="@+id/sadman_pp"
-        app:layout_constraintTop_toBottomOf="@+id/sadman_pp" />
+        android:transitionName="name3"
+        app:layout_constraintEnd_toEndOf="@+id/asef_pp"
+        app:layout_constraintStart_toStartOf="@+id/asef_pp"
+        app:layout_constraintTop_toBottomOf="@+id/asef_pp" />
 
     <TextView
         android:id="@+id/desc2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dp20"
-        android:text="@string/eftekhar_details"
-        app:layout_constraintEnd_toEndOf="@+id/sadman_text"
-        app:layout_constraintStart_toStartOf="@+id/sadman_text"
-        app:layout_constraintTop_toBottomOf="@+id/sadman_text" />
+        android:text="@string/asef_details"
+        app:layout_constraintEnd_toEndOf="@+id/asef_text"
+        app:layout_constraintStart_toStartOf="@+id/asef_text"
+        app:layout_constraintTop_toBottomOf="@+id/asef_text" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

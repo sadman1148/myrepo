@@ -21,11 +21,24 @@
         android:id="@+id/eftekhar_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/content_margin"
-        android:text="@string/eftekhar_details"
+        android:layout_marginTop="@dimen/dp40"
+        android:background="@color/white"
+        android:text="@string/eftekhar_name"
         android:textSize="@dimen/textSize"
+        android:transitionName="name2"
         app:layout_constraintEnd_toEndOf="@+id/eftekhar_pp"
         app:layout_constraintStart_toStartOf="@+id/eftekhar_pp"
         app:layout_constraintTop_toBottomOf="@+id/eftekhar_pp" />
+
+    <TextView
+        android:id="@+id/desc2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp20"
+        android:background="@color/white"
+        android:text="@string/eftekhar_details"
+        app:layout_constraintEnd_toEndOf="@+id/eftekhar_text"
+        app:layout_constraintStart_toStartOf="@+id/eftekhar_text"
+        app:layout_constraintTop_toBottomOf="@+id/eftekhar_text" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
