@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Dating App</string>
+    <string name="lifeline">Ajay Che</string>
+    <string name="like">Like</string>
+    <string name="order">Order</string>
+    <string name="comment">Comment</string>
+    <string name="download">Download</string>
+    <string name="edit">Edit</string>
+    <string name="tips">TIPS</string>
+    <string name="home">HOME</string>
+    <string name="profile">PROFILE</string>
+</resources>
