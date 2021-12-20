@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/linlay1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="1"
+        android:background="@drawable/bluegrad" >
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/linlay2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0"
+        android:background="@drawable/redgrad" />
+
+    <EditText
+        android:id="@+id/pass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp50"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp20"
+        android:text="@string/click_here"
+        app:layout_constraintEnd_toEndOf="@+id/pass"
+        app:layout_constraintStart_toStartOf="@+id/pass"
+        app:layout_constraintTop_toBottomOf="@+id/pass" />
+
+    <TextView
+        android:id="@+id/passtxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp20"
+        android:textSize="@dimen/sp20"
+        app:layout_constraintEnd_toEndOf="@+id/button"
+        app:layout_constraintStart_toStartOf="@+id/button"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp20"
+        android:text="@string/unchecked"
+        app:layout_constraintEnd_toEndOf="@+id/passtxt"
+        app:layout_constraintStart_toStartOf="@+id/passtxt"
+        app:layout_constraintTop_toBottomOf="@+id/passtxt" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/switcher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp20"
+        android:text="@string/off"
+        app:layout_constraintEnd_toEndOf="@+id/checkBox"
+        app:layout_constraintStart_toStartOf="@+id/checkBox"
+        app:layout_constraintTop_toBottomOf="@+id/checkBox" />
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dp50"
+        android:layout_marginTop="@dimen/dp70"
+        app:layout_constraintEnd_toEndOf="@+id/switcher"
+        app:layout_constraintStart_toStartOf="@+id/switcher"
+        app:layout_constraintTop_toBottomOf="@+id/switcher" />
+
+    <TextView
+        android:id="@+id/seeker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp90"
+        android:text="@string/zero"
+        app:layout_constraintEnd_toEndOf="@+id/switcher"
+        app:layout_constraintStart_toStartOf="@+id/switcher"
+        app:layout_constraintTop_toBottomOf="@+id/switcher" />
+
+    <ImageView
+        android:id="@+id/cold"
+        android:layout_width="@dimen/dp30"
+        android:layout_height="@dimen/dp30"
+        android:layout_marginStart="@dimen/dp20"
+        app:layout_constraintBottom_toBottomOf="@+id/seekBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/seekBar"
+        app:srcCompat="@drawable/cold" />
+
+    <ImageView
+        android:id="@+id/hot"
+        android:layout_width="@dimen/dp30"
+        android:layout_height="@dimen/dp30"
+        android:layout_marginEnd="@dimen/dp20"
+        app:layout_constraintBottom_toBottomOf="@+id/seekBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/seekBar"
+        app:srcCompat="@drawable/hot" />
+
+    <ImageView
+        android:id="@+id/mood"
+        android:layout_marginTop="@dimen/dp15"
+        android:layout_width="@dimen/dp50"
+        android:layout_height="@dimen/dp50"
+        app:layout_constraintStart_toStartOf="@id/switcher"
+        app:layout_constraintTop_toBottomOf="@+id/switcher"
+        app:layout_constraintEnd_toEndOf="@+id/switcher"
+        app:srcCompat="@drawable/freeze" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
