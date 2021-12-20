@@ -7,6 +7,7 @@
     android:layout_height="match_parent">
 
     <LinearLayout
+        android:elevation="@dimen/dp10"
         android:id="@+id/linlay1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -57,6 +58,7 @@
         android:layout_height="0dp">
 
         <androidx.appcompat.widget.LinearLayoutCompat
+            android:elevation="@dimen/dp20"
             android:id="@+id/menuOrder"
             android:layout_marginTop="@dimen/dp20"
             android:orientation="horizontal"
@@ -86,6 +88,7 @@
         </androidx.appcompat.widget.LinearLayoutCompat>
 
         <androidx.appcompat.widget.LinearLayoutCompat
+            android:elevation="@dimen/dp20"
             android:id="@+id/menuLike"
             android:layout_marginTop="@dimen/dp2"
             android:orientation="horizontal"
@@ -115,6 +118,7 @@
         </androidx.appcompat.widget.LinearLayoutCompat>
 
         <androidx.appcompat.widget.LinearLayoutCompat
+            android:elevation="@dimen/dp20"
             android:id="@+id/menuComment"
             android:layout_marginTop="@dimen/dp2"
             android:orientation="horizontal"
@@ -144,6 +148,7 @@
         </androidx.appcompat.widget.LinearLayoutCompat>
 
         <androidx.appcompat.widget.LinearLayoutCompat
+            android:elevation="@dimen/dp20"
             android:id="@+id/menuDL"
             android:layout_marginTop="@dimen/dp2"
             android:orientation="horizontal"
@@ -173,6 +178,7 @@
         </androidx.appcompat.widget.LinearLayoutCompat>
 
         <androidx.appcompat.widget.LinearLayoutCompat
+            android:elevation="@dimen/dp20"
             android:id="@+id/menuEdit"
             android:layout_marginTop="@dimen/dp2"
             android:orientation="horizontal"
@@ -206,15 +212,16 @@
 
     <ImageView
         android:id="@+id/settings"
+        android:elevation="@dimen/dp10"
         android:layout_width="@dimen/iconSize"
         android:layout_height="@dimen/iconSize"
-        android:layout_marginTop="@dimen/dp20"
-        android:layout_marginStart="@dimen/dp20"
+        android:layout_margin="@dimen/dp20"
         android:src="@drawable/settings"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.LinearLayoutCompat
+        android:elevation="@dimen/dp20"
         android:background="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -224,13 +231,13 @@
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:id="@+id/navTips"
-            android:padding="@dimen/dp2"
             android:layout_weight="1"
             android:gravity="center"
             android:orientation="vertical"
             android:layout_width="0dp"
             android:layout_height="wrap_content">
             <ImageView
+                android:padding="@dimen/dp3"
                 android:src="@drawable/tips"
                 android:layout_width="@dimen/bigIconSize"
                 android:layout_height="@dimen/bigIconSize"/>
@@ -242,7 +249,6 @@
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:id="@+id/navHome"
-            android:padding="@dimen/dp2"
             android:layout_weight="1"
             android:gravity="center"
             android:orientation="vertical"
@@ -250,6 +256,7 @@
             android:layout_height="wrap_content">
             <ImageView
                 android:src="@drawable/home"
+                android:padding="@dimen/dp3"
                 android:layout_width="@dimen/bigIconSize"
                 android:layout_height="@dimen/bigIconSize"/>
             <TextView
@@ -259,14 +266,15 @@
         </androidx.appcompat.widget.LinearLayoutCompat>
 
         <androidx.appcompat.widget.LinearLayoutCompat
+            android:background="#FE686A"
             android:id="@+id/navProf"
-            android:padding="@dimen/dp2"
             android:layout_weight="1"
             android:gravity="center"
             android:orientation="vertical"
             android:layout_width="0dp"
             android:layout_height="wrap_content">
             <ImageView
+                android:padding="@dimen/dp3"
                 android:src="@drawable/profile"
                 android:layout_width="@dimen/bigIconSize"
                 android:layout_height="@dimen/bigIconSize"/>

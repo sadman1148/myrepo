@@ -3,6 +3,7 @@ package com.redenvy.datingappv2;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -57,12 +58,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.navTips:
                 Toast.makeText(this, "Navigate to Tips", Toast.LENGTH_SHORT).show();
+                binder.navTips.setBackgroundColor(Color.parseColor("#FE686A"));
+                binder.navProf.setBackgroundColor(Color.parseColor("#FFFFFF"));
+                binder.navHome.setBackgroundColor(Color.parseColor("#FFFFFF"));
                 break;
             case R.id.navHome:
                 Toast.makeText(this, "Navigate to Home", Toast.LENGTH_SHORT).show();
+                binder.navHome.setBackgroundColor(Color.parseColor("#FE686A"));
+                binder.navProf.setBackgroundColor(Color.parseColor("#FFFFFF"));
+                binder.navTips.setBackgroundColor(Color.parseColor("#FFFFFF"));
                 break;
             case R.id.navProf:
                 Toast.makeText(this, "Navigate to Profile", Toast.LENGTH_SHORT).show();
+                binder.navProf.setBackgroundColor(Color.parseColor("#FE686A"));
+                binder.navTips.setBackgroundColor(Color.parseColor("#FFFFFF"));
+                binder.navHome.setBackgroundColor(Color.parseColor("#FFFFFF"));
                 break;
             case R.id.settings:
                 PopupMenu popupMenu = new PopupMenu(MainActivity.this,binder.settings);
