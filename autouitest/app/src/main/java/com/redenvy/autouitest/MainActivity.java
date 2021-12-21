@@ -1,6 +1,7 @@
 package com.redenvy.autouitest;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import android.os.Bundle;
 import android.view.View;

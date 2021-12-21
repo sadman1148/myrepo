@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Broadcast Test App</string>
+    <string name="go">GO</string>
+    <string name="title1">This text will reset in 10 seconds...</string>
+    <string name="title2">Updated text here...</string>
 </resources>

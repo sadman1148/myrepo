@@ -9,6 +9,6 @@ public class CustomBroadcastReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent){
-        Toast.makeText(context, "Broadcast Detected", Toast.LENGTH_SHORT).show();
+        Toast.makeText(context, "Text Updated", Toast.LENGTH_SHORT).show();
     }
 }
