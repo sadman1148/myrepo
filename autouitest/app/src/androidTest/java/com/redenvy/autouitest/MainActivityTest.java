@@ -8,9 +8,16 @@ import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
 
+import android.view.View;
+import android.widget.SeekBar;
+
 import androidx.test.espresso.Espresso;
+import androidx.test.espresso.UiController;
+import androidx.test.espresso.ViewAction;
+import androidx.test.espresso.matcher.ViewMatchers;
 import androidx.test.rule.ActivityTestRule;
 
+import org.hamcrest.Matcher;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
@@ -61,5 +68,25 @@ public class MainActivityTest {
         Espresso.onView(withId(R.id.seeker)).check(matches(withText(R.string.hunnid)));
         Espresso.onView(withId(R.id.seekBar)).perform(swipeLeft());
         Espresso.onView(withId(R.id.seeker)).check(matches(withText(R.string.zero)));
+        Espresso.onView(withId(R.id.seekBar)).perform(setProgress(50));
+        Espresso.onView(withId(R.id.seeker)).check(matches(withText(R.string.fifty)));
+    }
+
+    public static ViewAction setProgress(final int progress) {
+        return new ViewAction() {
+            @Override
+            public void perform(UiController uiController, View view) {
+                SeekBar seekBar = (SeekBar) view;
+                seekBar.setProgress(progress);
+            }
+            @Override
+            public String getDescription() {
+                return "Set a progress on a SeekBar";
+            }
+            @Override
+            public Matcher<View> getConstraints() {
+                return ViewMatchers.isAssignableFrom(SeekBar.class);
+            }
+        };
     }
 }

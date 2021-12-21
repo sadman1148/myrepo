@@ -8,4 +8,5 @@
     <string name="password">Password</string>
     <string name="zero">0</string>
     <string name="hunnid">100</string>
+    <string name="fifty">50</string>
 </resources>
