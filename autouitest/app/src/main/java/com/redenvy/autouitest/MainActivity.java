@@ -3,6 +3,7 @@ package com.redenvy.autouitest;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.SeekBar;
@@ -47,6 +48,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             }
         });
+
+        // registering the receiver
+        IntentFilter intentFilter = new IntentFilter("com.redenvy.broadcasttestapp.ACTION_KOTHA");
+        registerReceiver(new customBroadcastReceiver(),intentFilter);
     }
 
     public void onClick(View view) {

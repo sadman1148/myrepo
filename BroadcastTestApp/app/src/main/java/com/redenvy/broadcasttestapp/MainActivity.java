@@ -1,6 +1,7 @@
 package com.redenvy.broadcasttestapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ServiceCompat;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -13,7 +14,6 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     AirPlaneModeChangeReceiver airplaneModeChangeReceiver = new AirPlaneModeChangeReceiver();
-    CustomBroadcastReceiver customBroadcastReceiver = new CustomBroadcastReceiver();
     TextView t;
     Button b;
     @Override
@@ -32,8 +32,10 @@ public class MainActivity extends AppCompatActivity {
                 handler.postDelayed(() -> {
                     t.setText(R.string.title2);
                     // sending broadcast after the 10 seconds
-                    registerReceiver(customBroadcastReceiver, new IntentFilter(constant.CUSTOM_INTENT));
-                    sendBroadcast(new Intent().setAction(constant.CUSTOM_INTENT));
+                    Intent intent = new Intent();
+                    intent.setAction("com.redenvy.broadcasttestapp.ACTION_KOTHA");
+                    intent.setFlags(Intent.FLAG_INCLUDE_STOPPED_PACKAGES);
+                    sendBroadcast(intent);
                     }, 10000);
             }
         });
@@ -48,6 +50,5 @@ public class MainActivity extends AppCompatActivity {
         super.onStop();
         //unregister
         unregisterReceiver(airplaneModeChangeReceiver);
-        unregisterReceiver(customBroadcastReceiver);
     }
 }
