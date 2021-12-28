@@ -1,7 +1,7 @@
 package com.example.sometask.di
 
 import com.example.sometask.data.MovieRepo
-import com.example.sometask.data.remote.remoteAPI
+import com.example.sometask.data.remote.APIService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -14,7 +14,7 @@ object RepositoryModule {
 
     @Singleton
     @Provides
-    fun provideMovieRepository(remoteAPI: remoteAPI):MovieRepo{
-        return MovieRepo(remoteAPI)
+    fun provideMovieRepository(apiService: APIService):MovieRepo{
+        return MovieRepo(apiService)
     }
 }

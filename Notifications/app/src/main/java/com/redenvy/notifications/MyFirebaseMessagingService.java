@@ -19,9 +19,6 @@ public class MyFirebaseMessagingService
     // Override onMessageReceived() method
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
-        if (remoteMessage.getData().size() > 0) {
-            showNotification(remoteMessage.getData().get("title"), remoteMessage.getData().get("message"));
-        }
         if (remoteMessage.getNotification() != null) {
             showNotification(
                     remoteMessage.getNotification().getTitle(),
@@ -32,7 +29,7 @@ public class MyFirebaseMessagingService
     // Display notifications
     public void showNotification(String title, String message) {
         Intent intent = new Intent(this, MainActivity.class);
-        String channel_id = "notification_channel";
+        String channel_id = getString(R.string.notif_channel);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_ONE_SHOT);
         NotificationCompat.Builder builder = new NotificationCompat.Builder(getApplicationContext(), channel_id)
@@ -41,13 +38,9 @@ public class MyFirebaseMessagingService
                 .setVibrate(new long[]{1000, 1000, 1000, 1000, 1000})
                 .setOnlyAlertOnce(true)
                 .setContentIntent(pendingIntent);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-            builder = builder.setContent(getRemoteView(title, message));
-        } else {
-            builder = builder.setContentTitle(title)
-                    .setContentText(message)
-                    .setSmallIcon(android.R.drawable.ic_dialog_info);
-        }
+
+        builder = builder.setContent(getRemoteView(title, message));
+
         NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             NotificationChannel notificationChannel = new NotificationChannel(channel_id, "web_app", NotificationManager.IMPORTANCE_HIGH);
@@ -57,7 +50,7 @@ public class MyFirebaseMessagingService
     }
 
     public RemoteViews getRemoteView(String title, String message){
-        RemoteViews remoteView = new RemoteViews("com.redenvy.notifications",R.layout.notification);
+        RemoteViews remoteView = new RemoteViews(getString(R.string.pck_name),R.layout.notification);
         remoteView.setTextViewText(R.id.notificationTitle,title);
         remoteView.setTextViewText(R.id.notificationDescription,message);
         remoteView.setImageViewResource(R.id.notificationImage, android.R.drawable.ic_dialog_info);

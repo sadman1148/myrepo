@@ -3,4 +3,9 @@
     <string name="homePageText">This is the homepage of my App</string>
     <string name="notification_title">Notification Title</string>
     <string name="notification_description">Notification Description</string>
+    <string name="tag">\"Sadman debugs: \"</string>
+    <string name="topic_notif_success">Ready to receive</string>
+    <string name="topic_notif_failed">Not ready to receive</string>
+    <string name="notif_channel">notification_channel</string>
+    <string name="pck_name">com.redenvy.notifications</string>
 </resources>

@@ -1,12 +1,13 @@
 package com.example.sometask.di
 
-import com.example.sometask.data.apiURL
-import com.example.sometask.data.remote.remoteAPI
+import com.example.sometask.data.remote.APIService
+import com.example.sometask.data.remote.ApiURL
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
 @Module
@@ -15,11 +16,13 @@ object NetworkModule {
 
     @Singleton
     @Provides
-    fun provideRetrofit():Retrofit{
-        return Retrofit.Builder().baseUrl(apiURL.BASE_URL).build()
+    fun provideRetrofit(): Retrofit{
+        return Retrofit.Builder().baseUrl(ApiURL.BASE_URL).addConverterFactory(GsonConverterFactory.create()).build()
     }
 
-    fun provideApiService(retrofit: Retrofit):remoteAPI{
-        return retrofit.create(remoteAPI::class.java)
+    @Singleton
+    @Provides
+    fun provideApiService(retrofit: Retrofit):APIService{
+        return retrofit.create(APIService::class.java)
     }
 }
