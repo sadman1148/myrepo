@@ -33,7 +33,7 @@ public class MyFirebaseMessagingService
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_ONE_SHOT);
         NotificationCompat.Builder builder = new NotificationCompat.Builder(getApplicationContext(), channel_id)
-                .setSmallIcon(android.R.drawable.ic_dialog_info)
+                .setSmallIcon(R.drawable.logo)
                 .setAutoCancel(true)
                 .setVibrate(new long[]{1000, 1000, 1000, 1000, 1000})
                 .setOnlyAlertOnce(true)
@@ -42,6 +42,7 @@ public class MyFirebaseMessagingService
         builder = builder.setContent(getRemoteView(title, message));
 
         NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             NotificationChannel notificationChannel = new NotificationChannel(channel_id, "web_app", NotificationManager.IMPORTANCE_HIGH);
             notificationManager.createNotificationChannel(notificationChannel);
@@ -49,6 +50,7 @@ public class MyFirebaseMessagingService
         notificationManager.notify(0, builder.build());
     }
 
+    // remoteview for notification's xml
     public RemoteViews getRemoteView(String title, String message){
         RemoteViews remoteView = new RemoteViews(getString(R.string.pck_name),R.layout.notification);
         remoteView.setTextViewText(R.id.notificationTitle,title);

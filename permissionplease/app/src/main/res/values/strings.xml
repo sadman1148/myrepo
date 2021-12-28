@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Permission Please</string>
+    <string name="default_edittext_text">Type your text here...</string>
+    <string name="read">READ</string>
+    <string name="write">WRITE</string>
+    <string name="edit">EDIT</string>
+    <string name="clean">CLEAR</string>
+    <string name="nothingToSave">Nothing to save</string>
+    <string name="cleared">Text Cleared</string>
+    <string name="loaded">Text Loaded</string>
+    <string name="saved">Text Saved</string>
 </resources>
