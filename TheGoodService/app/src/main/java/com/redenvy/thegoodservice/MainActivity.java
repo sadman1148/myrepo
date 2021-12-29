@@ -2,6 +2,9 @@ package com.redenvy.thegoodservice;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.job.JobInfo;
+import android.app.job.JobScheduler;
+import android.content.ComponentName;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -23,6 +26,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         binder.playButton.setOnClickListener(this);
         binder.pauseButton.setOnClickListener(this);
         binder.stopButton.setOnClickListener(this);
+        binder.schedule.setOnClickListener(this);
+        binder.cancel.setOnClickListener(this);
     }
     public void onClick(View view){
         switch (view.getId()){
@@ -64,6 +69,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     binder.musicAnimationView.setVisibility(view.GONE);
                     Toast.makeText(this, "Music Stopped", Toast.LENGTH_SHORT).show();
                 }
+                break;
+            case R.id.schedule:
+                ComponentName componentName = new ComponentName(getApplicationContext(), MyJobService.class);
+                JobInfo jobInfo = new JobInfo.Builder (123, componentName)
+                    .setRequiredNetworkType (JobInfo.NETWORK_TYPE_ANY)
+                    .setPersisted(true)
+                    .setPeriodic(15 * 60 * 1000)
+                    .build();
+                JobScheduler jobScheduler = (JobScheduler) getSystemService (JOB_SCHEDULER_SERVICE);
+                int res = jobScheduler.schedule (jobInfo);
+                if(res == JobScheduler.RESULT_SUCCESS) {
+                    Toast.makeText(MainActivity.this, "Job Scheduled", Toast.LENGTH_SHORT).show();
+                }
+                break;
+            case R.id.cancel:
+                JobScheduler jobKiller = (JobScheduler) getSystemService (JOB_SCHEDULER_SERVICE);
+                jobKiller.cancel(123);
                 break;
         }
     }

@@ -47,6 +47,5 @@ public class MusicService extends Service {
         vlc.stop();
         vlc.release();
         vlc = null;
-
     }
 }

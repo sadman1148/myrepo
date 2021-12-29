@@ -9,19 +9,20 @@
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/linlay1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:gravity="center_horizontal"
-        android:layout_marginTop="@dimen/dp30"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp30"
+        android:gravity="center_horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/black"
-            android:padding="@dimen/dp2" >
+            android:padding="@dimen/dp2">
+
             <ImageView
                 android:layout_width="@dimen/dp150"
                 android:layout_height="@dimen/dp150"
@@ -32,34 +33,35 @@
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/overlay"
-        android:layout_marginTop="@dimen/dp60"
-        app:layout_constraintTop_toTopOf="parent"
-        android:gravity="center_horizontal"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp60"
+        android:gravity="center_horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
         <com.airbnb.lottie.LottieAnimationView
-            android:visibility="gone"
             android:id="@+id/musicAnimationView"
-            android:layout_marginEnd="@dimen/dp7"
             android:layout_width="@dimen/dp300"
             android:layout_height="@dimen/dp300"
-            app:lottie_rawRes="@raw/music"
+            android:layout_marginEnd="@dimen/dp7"
+            android:visibility="gone"
             app:lottie_autoPlay="true"
-            app:lottie_loop="true"/>
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/music" />
     </androidx.appcompat.widget.LinearLayoutCompat>
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/linlay2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dp50"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/linlay1"
         android:gravity="center_horizontal"
         android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linlay1">
 
         <ImageView
             android:id="@+id/play_button"
@@ -69,9 +71,9 @@
 
         <ImageView
             android:id="@+id/pause_button"
-            android:layout_marginHorizontal="@dimen/dp10"
             android:layout_width="@dimen/dp30"
             android:layout_height="@dimen/dp30"
+            android:layout_marginHorizontal="@dimen/dp10"
             android:src="@drawable/pause" />
 
         <ImageView
@@ -79,6 +81,33 @@
             android:layout_width="@dimen/dp30"
             android:layout_height="@dimen/dp30"
             android:src="@drawable/stop" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp10"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linlay2">
+
+        <Button
+            android:id="@+id/schedule"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="@dimen/dp120"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dp10"
+            android:text="@string/schedule" />
+
+        <Button
+            android:id="@+id/cancel"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="@dimen/dp120"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp10"
+            android:text="@string/cancel" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
