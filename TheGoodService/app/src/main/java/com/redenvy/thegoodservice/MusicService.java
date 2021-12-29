@@ -4,6 +4,7 @@ import android.app.Service;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.IBinder;
+import android.util.Log;
 
 import androidx.annotation.Nullable;
 
@@ -29,6 +30,7 @@ public class MusicService extends Service {
         if (vlc!=null && canResume){
             vlc.start();
         }
+        Log.e("Sadman searches", "Music started");
         return startId;
     }
 
