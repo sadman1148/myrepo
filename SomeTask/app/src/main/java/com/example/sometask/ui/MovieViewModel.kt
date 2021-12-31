@@ -19,9 +19,9 @@ class MovieViewModel @Inject constructor(private val repo: MovieRepo) : ViewMode
     private val movies = MutableLiveData<DataState<BaseMovie>>()
     val movie:LiveData<DataState<BaseMovie>> get() = movies
 
-    fun getMovies(){
-        viewModelScope.launch { repo.movieList().onEach {
-            movies.value = it
-        }.launchIn(viewModelScope) }
+    fun getMovies(pageNumber: Int){
+        viewModelScope.launch {
+            repo.movieList(pageNumber).onEach { movies.value = it }.launchIn(viewModelScope)
+        }
     }
 }

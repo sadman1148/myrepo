@@ -11,20 +11,20 @@ import com.example.sometask.data.model.Result
 import com.example.sometask.data.remote.ApiURL
 import com.example.sometask.databinding.MovieItemBinding
 
-class MovieAdapter : RecyclerView.Adapter<MovieAdapter.MovieViewHolder>(){
+class MovieAdapter : RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
 
     private val movies = mutableListOf<Result>()
 
-    fun addItems(movie: List<Result>){
+    fun addItems(movie: List<Result>) {
         movies.addAll(movie)
         notifyDataSetChanged()
     }
 
-    inner class MovieViewHolder(private val binding: MovieItemBinding): RecyclerView.ViewHolder(binding.root) {
-        fun bind(movie: Result){
-            binding.textviewMovieTitle.text = movie.title
+    inner class MovieViewHolder(private val binding: MovieItemBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+        fun bind(movie: Result) {
             Glide.with(this.itemView)
-                .load(ApiURL.POSTER_BASE_URL_OF_SIZE_W500+movie.posterPath)
+                .load(ApiURL.POSTER_BASE_URL_OF_SIZE_W500 + movie.posterPath)
                 .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
                 .into(binding.shapeableImageviewMoviePoster)
         }
