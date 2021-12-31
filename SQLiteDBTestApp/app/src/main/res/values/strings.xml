@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">SQLite DB Test App</string>
+    <string name="car_name">Car</string>
+    <string name="brand_name">Brand</string>
+    <string name="patch_name">Patch</string>
+    <string name="add">ADD</string>
+    <string name="show">SHOW</string>
+</resources>
