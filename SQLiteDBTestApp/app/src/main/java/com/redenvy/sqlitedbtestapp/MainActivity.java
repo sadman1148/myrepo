@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         sqLiteDB = new SQLiteDB(MainActivity.this);
         bind.addButton.setOnClickListener(this);
         bind.showButton.setOnClickListener(this);
+        bind.wipe.setOnClickListener(this);
         actualDataSet = new ArrayList<String>();
         actualDataSet.add("Car_Brand_Patch");
         adapter = new myAdapter(actualDataSet,MainActivity.this);
@@ -60,6 +61,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.wipe:
                 sqLiteDB.cleanSlate();
+                adapter.cleanSlate();
+                actualDataSet.clear();
+                actualDataSet.add("Car_Brand_Patch");
                 break;
         }
     }
