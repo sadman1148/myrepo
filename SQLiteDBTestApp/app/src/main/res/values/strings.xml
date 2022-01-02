@@ -4,5 +4,6 @@
     <string name="brand_name">Brand</string>
     <string name="patch_name">Patch</string>
     <string name="add">ADD</string>
-    <string name="show">SHOW</string>
+    <string name="show">RELOAD</string>
+    <string name="clear">Clear</string>
 </resources>

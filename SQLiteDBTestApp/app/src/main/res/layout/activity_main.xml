@@ -14,7 +14,7 @@
         android:layout_marginHorizontal="10dp"
         android:layout_marginTop="@dimen/dp20"
         android:hint="@string/car_name"
-        android:padding="@dimen/dp5"
+        android:padding="@dimen/dp10"
         android:textSize="@dimen/sp20" />
 
     <EditText
@@ -24,7 +24,7 @@
         android:layout_marginHorizontal="10dp"
         android:layout_marginTop="@dimen/dp10"
         android:hint="@string/brand_name"
-        android:padding="@dimen/dp5"
+        android:padding="@dimen/dp10"
         android:textSize="@dimen/sp20" />
 
     <EditText
@@ -34,7 +34,7 @@
         android:layout_marginHorizontal="10dp"
         android:layout_marginTop="@dimen/dp10"
         android:hint="@string/patch_name"
-        android:padding="@dimen/dp5"
+        android:padding="@dimen/dp10"
         android:textSize="@dimen/sp20" />
 
     <androidx.appcompat.widget.LinearLayoutCompat
@@ -45,7 +45,7 @@
         <Button
             android:id="@+id/addButton"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/dp100"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/dp5"
             android:text="@string/add" />
@@ -53,11 +53,33 @@
         <Button
             android:id="@+id/showButton"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/dp100"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/dp5"
             android:text="@string/show" />
+
+        <Button
+            android:id="@+id/wipe"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="@dimen/dp100"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp5"
+            android:text="@string/clear" />
+
     </androidx.appcompat.widget.LinearLayoutCompat>
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="@dimen/dp10"
+        android:layout_marginTop="@dimen/dp10"
+        android:background="@color/customGrey">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </ScrollView>
 
 </androidx.appcompat.widget.LinearLayoutCompat>
