@@ -24,6 +24,8 @@
             app:title="@string/bright" />
         <CheckBoxPreference
             app:key="auto"
+            app:summaryOff="Turn ON automatic brightness"
+            app:summaryOn="Turn OFF automatic brightness"
             app:title="Automatic" />
     </PreferenceCategory>
 
