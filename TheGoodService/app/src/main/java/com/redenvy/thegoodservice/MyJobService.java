@@ -10,7 +10,7 @@ public class MyJobService extends JobService {
     @Override
     public boolean onStartJob(JobParameters params) {
         startTheMusic(params);
-        return true;
+        return false;
     }
 
     @Override

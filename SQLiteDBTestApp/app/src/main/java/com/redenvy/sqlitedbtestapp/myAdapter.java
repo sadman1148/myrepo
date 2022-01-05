@@ -6,43 +6,35 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class myAdapter extends RecyclerView.Adapter <myAdapter.ViewHolder>{
+public class myAdapter extends RecyclerView.Adapter<myAdapter.ViewHolder> {
 
     private static final String TAG = "R3DENVY";
-    
+
     private ArrayList<String> localDataSet;
     private Context context;
 
-    public myAdapter(ArrayList<String> dataSet, Context context) {
-        localDataSet = dataSet;
+    public myAdapter(ArrayList localDataSet, Context context) {
+        this.localDataSet = localDataSet;
         this.context = context;
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder{
-        private final TextView cartextView;
-        private final TextView brandtextView;
-        private final TextView patchtextView;
+    public static class ViewHolder extends RecyclerView.ViewHolder {
+        TextView cartextView;
+        TextView brandtextView;
+        TextView patchtextView;
 
         public ViewHolder(View view) {
             super(view);
             cartextView = (TextView) view.findViewById(R.id.carName);
             brandtextView = (TextView) view.findViewById(R.id.brandName);
             patchtextView = (TextView) view.findViewById(R.id.patch);
-
             // Define click listener for the ViewHolder's View here if needed
-        }
-        public TextView getCartextView(){
-            return cartextView;
-        }
-        public TextView getBrandtextView(){
-            return brandtextView;
-        }
-        public TextView getPatchtextView(){
-            return patchtextView;
         }
     }
 
@@ -54,14 +46,20 @@ public class myAdapter extends RecyclerView.Adapter <myAdapter.ViewHolder>{
 
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, final int position) {
-        String [] temp = localDataSet.get(position).split("_");
-        Log.e(TAG, ""+localDataSet.get(position));
-        viewHolder.getCartextView().setText(temp[0]);
-        viewHolder.getBrandtextView().setText(temp[1]);
-        viewHolder.getPatchtextView().setText(temp[2]);
+        String[] temp = localDataSet.get(position).split("_");
+        if(!temp[0].equals("")){
+            viewHolder.cartextView.setText(temp[0]);
+            viewHolder.brandtextView.setText(temp[1]);
+            viewHolder.patchtextView.setText(temp[2]);
+        }
+        else{
+            viewHolder.cartextView.setVisibility(View.GONE);
+            viewHolder.brandtextView.setVisibility(View.GONE);
+            viewHolder.patchtextView.setVisibility(View.GONE);
+        }
     }
 
-    public void cleanSlate(){
+    public void cleanSlate() {
         localDataSet.clear();
     }
 

@@ -30,7 +30,7 @@ public class MusicService extends Service {
         if (vlc!=null && canResume){
             vlc.start();
         }
-        Log.e("Sadman searches", "Music started");
+        Log.e("r3denvy", "Music started");
         return startId;
     }
 
