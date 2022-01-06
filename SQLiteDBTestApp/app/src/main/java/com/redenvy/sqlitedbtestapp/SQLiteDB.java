@@ -35,7 +35,6 @@ public class SQLiteDB extends SQLiteOpenHelper {
     public void insertData(String car, String brand, String patch){
         sqlDB = getWritableDatabase();
         sqlDB.execSQL("insert into "+TABLE_NAME+" (car_name,brand_name,patch_name) values('"+car+"','"+brand+"','"+patch+"');");
-//        sqlDB.close();
     }
 
     public String getData(){
@@ -48,13 +47,11 @@ public class SQLiteDB extends SQLiteOpenHelper {
             String patch = cr.getString(3);
             output = output + car+"_"+brand+"_"+patch+".";
         }
-//        sqlDB.close();
         return output;
     }
 
     public void cleanSlate(){
         sqlDB = getWritableDatabase();
         sqlDB.execSQL("delete from "+TABLE_NAME);
-//        sqlDB.close();
     }
 }
