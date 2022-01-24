@@ -20,11 +20,4 @@ class MovieRepo @Inject constructor(private val apiService: APIService){
             emit(DataState.Error(exception))
         }
     }
-//    fun movieList() = Pager(
-//    config = PagingConfig(
-//        pageSize = 20,
-//        maxSize = 100,
-//        enablePlaceholders = false
-//    ), pagingSourceFactory = {PagingSource(apiService)}
-//    ).liveData
 }

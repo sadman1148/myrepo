@@ -1,0 +1,35 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory app:title="@string/display">
+
+        <SwitchPreferenceCompat
+            app:summaryOff="@string/off"
+            app:summaryOn="@string/on"
+            app:title="@string/nightmode" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/sync_header">
+
+        <SwitchPreferenceCompat
+            app:key="@string/sync_title"
+            app:summaryOff="@string/off"
+            app:summaryOn="@string/on"
+            app:title="@string/sync_title" />
+
+        <DropDownPreference
+            app:dependency="@string/sync_header"
+            app:entries="@array/time_entries"
+            app:entryValues="@array/time_entries"
+            app:key="@string/syncInterval_Key"
+            app:title="@string/syncInterval_title"
+            app:useSimpleSummaryProvider="true" />
+
+        <Preference
+            app:title="@string/syncNow_title"
+            app:key="@string/syncNow_key"
+            app:summary="@string/syncNow_Desc" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

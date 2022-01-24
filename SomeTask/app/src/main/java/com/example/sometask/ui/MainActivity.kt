@@ -40,13 +40,6 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         })
-//        movieAdapter.onItemClick = { movieItem ->
-//            val gson = Gson()
-//            val intent = Intent(this@MainActivity, MovieDetailsActivity::class.java).apply {
-//                putExtra("movie", gson.toJson(movieItem))
-//            }
-//            startActivity(intent)
-//        }
     }
 
     private fun callTheApi() {
