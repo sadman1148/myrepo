@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
                 }
                 is DataState.Success -> {
                     it.data.forEach{
-                        Timber.e("Time: ${it.time}\nTitle: ${it.title}")
+//                        Timber.e("Time: ${it.time} Title: ${it.title}")
                     }
                 }
                 is DataState.Error -> {

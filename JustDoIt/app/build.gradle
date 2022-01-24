@@ -66,7 +66,7 @@ dependencies {
     implementation "com.google.code.gson:gson:2.8.9"
 
     // JSON Converter
-    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
 
     // Retrofit API client
     implementation "com.squareup.okhttp3:okhttp:5.0.0-alpha.2"
@@ -75,4 +75,8 @@ dependencies {
 
     // Timber
     implementation 'com.jakewharton.timber:timber:5.0.1'
+
+    // Navigation Component
+    implementation "androidx.navigation:navigation-fragment-ktx:2.3.5"
+    implementation "androidx.navigation:navigation-ui-ktx:2.3.5"
 }
