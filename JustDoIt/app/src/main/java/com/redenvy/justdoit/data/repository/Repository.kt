@@ -1,34 +1,19 @@
 package com.redenvy.justdoit.data.repository
 
-import androidx.lifecycle.LiveData
-import com.redenvy.justdoit.data.model.TodoList
-import com.redenvy.justdoit.data.network.RetrofitBuilder
-import kotlinx.coroutines.*
-import kotlinx.coroutines.Dispatchers.IO
-import kotlinx.coroutines.Dispatchers.Main
+import com.redenvy.justdoit.data.network.APIService
+import com.redenvy.justdoit.utils.DataState
+import kotlinx.coroutines.flow.flow
+import java.lang.Exception
+import javax.inject.Inject
 
-object Repository {
-    var job: CompletableJob? = null
-
-    fun getActivity(): LiveData<TodoList>{
-        job = Job()
-        return object : LiveData<TodoList>(){
-            override fun onActive() {
-                super.onActive()
-                job?.let { theJob ->
-                    CoroutineScope(IO + theJob).launch {
-                        val activity = RetrofitBuilder.apiService.todoList()
-                        withContext(Main){
-                            value = activity
-                            theJob.complete()
-                        }
-                    }
-                }
-            }
+class Repository @Inject constructor(private val apiService: APIService) {
+    suspend fun todoList() = flow {
+        emit(DataState.Loading)
+        try {
+            val result = apiService.todoList()
+            emit(DataState.Success(result))
         }
-    }
-
-    fun cancelJobs(){
-        job?.cancel()
-    }
-}
+        catch (e:Exception){
+            emit(DataState.Error(e))
+        }
+    }}

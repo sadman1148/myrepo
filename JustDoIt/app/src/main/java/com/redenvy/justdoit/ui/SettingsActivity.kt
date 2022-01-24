@@ -1,10 +1,7 @@
 package com.redenvy.justdoit.ui
 
-import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.app.AppCompatDelegate
-import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 import com.redenvy.justdoit.R
 
@@ -36,12 +33,19 @@ class SettingsActivity : AppCompatActivity() {
     class SettingsFragment : PreferenceFragmentCompat() {
         override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
             setPreferencesFromResource(R.xml.root_preferences, rootKey)
-            val manualSync : Preference? = findPreference<Preference>(getString(R.string.syncNow_key))
+//            val manualSync : Preference? = findPreference<Preference>(getString(R.string.syncNow_key))
 //            manualSync.setOnPreferenceChangeListener(Preference.OnPreferenceChangeListener(){
 //                onPreferenceTreeClick(preference:Preference){
 //
 //                }
 //            })
+
+//            sharedPreferenceChangeListener =
+//                SharedPreferences.OnSharedPreferenceChangeListener { sharedPreferences: SharedPreferences?, key: String? ->
+//                    when (key) {
+//                        "switch" -> Timber.e(sharedPreferences?.getBoolean(key, false).toString())
+//                    }
+//                }
             //TODO: Scooby-Doo this crap
         }
     }

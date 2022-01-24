@@ -4,6 +4,6 @@ import com.redenvy.justdoit.data.model.TodoList
 import retrofit2.http.GET
 
 interface APIService {
-    @GET(RetrofitBuilder.EXTENSION_URL)
+    @GET(APIurl.EXTENSION_URL)
     suspend fun todoList(): TodoList
 }
