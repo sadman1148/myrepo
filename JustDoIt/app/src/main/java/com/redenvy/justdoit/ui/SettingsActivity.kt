@@ -40,13 +40,6 @@ class SettingsActivity : AppCompatActivity() {
 //                }
 //            })
 
-//            sharedPreferenceChangeListener =
-//                SharedPreferences.OnSharedPreferenceChangeListener { sharedPreferences: SharedPreferences?, key: String? ->
-//                    when (key) {
-//                        "switch" -> Timber.e(sharedPreferences?.getBoolean(key, false).toString())
-//                    }
-//                }
-            //TODO: Scooby-Doo this crap
         }
     }
 }

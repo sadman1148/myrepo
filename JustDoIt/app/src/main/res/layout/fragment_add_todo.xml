@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context="ui.Fragments.AddTodoFragment">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="@dimen/dp20"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/dp20"
+            android:gravity="center_horizontal"
+            android:text="@string/add_a_new_todo"
+            android:textColor="@color/titles"
+            android:textSize="@dimen/sp20" />
+
+        <EditText
+            android:id="@+id/newTodoTitle"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp60"
+            android:hint="@string/todo_title"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/newTodoTime"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp60"
+            android:enabled="false"
+            android:hint="01.11.2021 - 4:20 PM" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="@dimen/dp10"
+            android:layout_weight="1"
+            android:gravity="start"
+            android:hint="@string/todo_list_items"
+            android:inputType="textMultiLine" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

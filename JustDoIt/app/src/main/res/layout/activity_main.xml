@@ -1,53 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background"
-    android:orientation="vertical"
-    tools:context=".ui.MainActivity">
+    tools:context=".ui.Activity.MainActivity">
 
-    <androidx.appcompat.widget.LinearLayoutCompat
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <TextView
-            android:id="@+id/logoText"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:fontFamily="@font/lobster"
-            android:padding="@dimen/dp20"
-            android:shadowColor="@color/glow"
-            android:shadowDx="0"
-            android:shadowDy="0"
-            android:shadowRadius="50"
-            android:text="@string/app_name"
-            android:textColor="@color/logo"
-            android:textSize="@dimen/sp30"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
-            android:id="@+id/settingsIcon"
-            android:layout_width="@dimen/iconSize30"
-            android:layout_height="@dimen/iconSize30"
-            android:layout_gravity="center"
-            android:layout_marginEnd="@dimen/dp20"
-            android:backgroundTint="@color/white"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_baseline_settings_24" />
-    </androidx.appcompat.widget.LinearLayoutCompat>
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </ScrollView>
+        android:layout_height="match_parent"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/todo_app_navigation" />
 
 </androidx.appcompat.widget.LinearLayoutCompat>
