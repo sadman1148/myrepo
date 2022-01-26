@@ -1,5 +1,5 @@
 <resources>
-    <!-- Reply Preference -->
+    <!-- Time Preference -->
     <string-array name="time_entries">
         <item>6 hours</item>
         <item>12 hours</item>

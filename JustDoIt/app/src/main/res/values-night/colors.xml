@@ -14,4 +14,6 @@
     <color name="glow">#2BFF14</color>
     <color name="background">#000000</color>
     <color name="fab_bg_shadow">#2BFF14</color>
+
+    <color name="grey">#119F00</color>
 </resources>

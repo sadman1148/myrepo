@@ -26,9 +26,9 @@
             app:useSimpleSummaryProvider="true" />
 
         <Preference
-            app:title="@string/syncNow_title"
             app:key="@string/syncNow_key"
-            app:summary="@string/syncNow_Desc" />
+            app:summary="@string/syncNow_Desc"
+            app:title="@string/syncNow_title" />
 
     </PreferenceCategory>
 

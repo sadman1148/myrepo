@@ -7,9 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.redenvy.justdoit.R
 import com.redenvy.justdoit.ViewModel.TodoListViewModel
+import com.redenvy.justdoit.data.model.TodoListItem
 import com.redenvy.justdoit.databinding.FragmentMainBinding
+import com.redenvy.justdoit.ui.Adapters.RecyclerViewAdapter
 import com.redenvy.justdoit.utils.DataState
 import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
@@ -18,6 +21,9 @@ import timber.log.Timber
 class MainFragment : Fragment() {
     private lateinit var binding: FragmentMainBinding
     private val viewModel: TodoListViewModel by viewModels()
+    private val recyclerViewAdapter : RecyclerViewAdapter by lazy {
+        RecyclerViewAdapter()
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -26,27 +32,36 @@ class MainFragment : Fragment() {
 
         // Inflate the layout for this fragment
         binding = FragmentMainBinding.inflate(inflater, container, false)
-        //initViewModel()
         initOnClicks()
         return binding.root
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        //initViewModel()
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        initRecycler()
     }
 
-    fun initViewModel(){
-        //viewModel.getTodo()
-        viewModel.todoLists.observe(this){
+    private fun initRecycler() {
+        binding.recycler.apply {
+            layoutManager = LinearLayoutManager(context)
+            adapter = recyclerViewAdapter
+        }
+        viewModel.insertToLocalDbFromAPI()
+        viewModel.todoLists.observe(viewLifecycleOwner){
             when (it) {
                 is DataState.Loading -> {
                     Timber.e("Loading")
                 }
                 is DataState.Success -> {
                     it.data.forEach{
-                        Timber.e("Time: ${it.time} Title: ${it.title}")
-                        // TODO: work this out
+                        var tempList : MutableList<TodoListItem> = mutableListOf()
+                        tempList.add(TodoListItem(
+                            it.id,
+                            it.title,
+                            it.time,
+                            it.todo
+                        ))
+                        recyclerViewAdapter.addTodos(tempList)
                     }
                 }
                 is DataState.Error -> {
@@ -59,7 +74,7 @@ class MainFragment : Fragment() {
     private fun initOnClicks() {
         binding.apply {
             settingsIcon.setOnClickListener(){
-
+                findNavController().navigate(R.id.action_mainFragment_to_settingsFragment)
             }
             addButton.setOnClickListener(){
                 findNavController().navigate(R.id.action_mainFragment_to_addTodoFragment)

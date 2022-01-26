@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -12,37 +13,64 @@
         android:layout_marginHorizontal="@dimen/dp20"
         android:orientation="vertical">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginVertical="@dimen/dp20"
-            android:gravity="center_horizontal"
-            android:text="@string/add_a_new_todo"
-            android:textColor="@color/titles"
-            android:textSize="@dimen/sp20" />
-
         <EditText
             android:id="@+id/newTodoTitle"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp60"
+            android:layout_marginTop="@dimen/dp20"
+            android:background="@drawable/custom_input"
             android:hint="@string/todo_title"
-            android:inputType="text" />
+            android:inputType="text"
+            android:paddingStart="@dimen/dp10" />
 
-        <EditText
-            android:id="@+id/newTodoTime"
+        <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp60"
-            android:enabled="false"
-            android:hint="01.11.2021 - 4:20 PM" />
+            android:gravity="center_vertical">
+
+            <EditText
+                android:id="@+id/newTodoTime"
+                android:layout_width="@dimen/dp0"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/custom_input"
+                android:enabled="false"
+                android:hint="@string/pick_a_time"
+                android:paddingStart="@dimen/dp10" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/addTimeButton"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_baseline_alarm_24"
+                android:text="@string/timer"
+                android:textColor="@color/titles"
+                app:strokeColor="@color/grey" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
 
         <EditText
+            android:id="@+id/newSubtodo"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginBottom="@dimen/dp10"
             android:layout_weight="1"
+            android:background="@drawable/custom_input"
             android:gravity="start"
             android:hint="@string/todo_list_items"
-            android:inputType="textMultiLine" />
+            android:inputType="textMultiLine"
+            android:paddingStart="@dimen/dp10"
+            android:paddingTop="@dimen/dp10" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/saveButton"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginVertical="@dimen/dp10"
+            android:text="@string/save"
+            android:textColor="@color/logo"
+            app:strokeColor="@color/logo" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 

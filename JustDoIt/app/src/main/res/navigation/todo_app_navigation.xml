@@ -15,6 +15,9 @@
         <action
             android:id="@+id/action_mainFragment_to_updateTodoFragment"
             app:destination="@id/updateTodoFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
     </fragment>
     <fragment
         android:id="@+id/addTodoFragment"
@@ -32,6 +35,14 @@
         tools:layout="@layout/fragment_update_todo" >
         <action
             android:id="@+id/action_updateTodoFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.redenvy.justdoit.ui.Fragments.SettingsFragment"
+        android:label="Settings" >
+        <action
+            android:id="@+id/action_settingsFragment_to_mainFragment"
             app:destination="@id/mainFragment" />
     </fragment>
 </navigation>
