@@ -12,7 +12,7 @@
     <PreferenceCategory app:title="@string/sync_header">
 
         <SwitchPreferenceCompat
-            app:key="@string/sync_title"
+            app:key="@string/sync_header"
             app:summaryOff="@string/off"
             app:summaryOn="@string/on"
             app:title="@string/sync_title" />

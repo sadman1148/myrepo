@@ -95,4 +95,7 @@ dependencies {
     implementation("androidx.room:room-runtime:$roomVersion")
     annotationProcessor("androidx.room:room-compiler:$roomVersion")
     kapt("androidx.room:room-compiler:$roomVersion")
+
+    //timedate picker
+    implementation 'com.github.jhonatansabadi:datetime-picker:1.0.6'
 }

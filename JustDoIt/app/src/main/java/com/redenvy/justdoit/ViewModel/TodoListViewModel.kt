@@ -17,7 +17,9 @@ class TodoListViewModel @Inject constructor(private val repo:Repository) : ViewM
     private val _todoList = MutableLiveData<DataState<TodoList>>()
     val todoLists: LiveData<DataState<TodoList>> get() = _todoList
 
-    fun insertToLocalDbFromAPI() {
+    val localTodoList: LiveData<List<TodoListItem>> get() = repo.getData()
+
+    fun insertApiDataToLocalDb() {
         viewModelScope.launch {
             repo.todoList().onEach { it ->
                 when (it) {
@@ -30,6 +32,12 @@ class TodoListViewModel @Inject constructor(private val repo:Repository) : ViewM
                     }
                 }
             }.launchIn(viewModelScope)
+        }
+    }
+
+    fun insertNewTodo(todoListItem : TodoListItem){
+        viewModelScope.launch (Dispatchers.Default) {
+            repo.insertData(todoListItem)
         }
     }
 

@@ -6,16 +6,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.LifecycleOwner
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.redenvy.justdoit.R
 import com.redenvy.justdoit.ViewModel.TodoListViewModel
-import com.redenvy.justdoit.data.model.TodoListItem
 import com.redenvy.justdoit.databinding.FragmentMainBinding
 import com.redenvy.justdoit.ui.Adapters.RecyclerViewAdapter
-import com.redenvy.justdoit.utils.DataState
 import dagger.hilt.android.AndroidEntryPoint
-import timber.log.Timber
 
 @AndroidEntryPoint
 class MainFragment : Fragment() {
@@ -32,13 +30,17 @@ class MainFragment : Fragment() {
 
         // Inflate the layout for this fragment
         binding = FragmentMainBinding.inflate(inflater, container, false)
-        initOnClicks()
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        initOnClicks()
         initRecycler()
+    }
+
+    private fun sync(){
+        viewModel.insertApiDataToLocalDb()
     }
 
     private fun initRecycler() {
@@ -46,28 +48,8 @@ class MainFragment : Fragment() {
             layoutManager = LinearLayoutManager(context)
             adapter = recyclerViewAdapter
         }
-        viewModel.insertToLocalDbFromAPI()
-        viewModel.todoLists.observe(viewLifecycleOwner){
-            when (it) {
-                is DataState.Loading -> {
-                    Timber.e("Loading")
-                }
-                is DataState.Success -> {
-                    it.data.forEach{
-                        var tempList : MutableList<TodoListItem> = mutableListOf()
-                        tempList.add(TodoListItem(
-                            it.id,
-                            it.title,
-                            it.time,
-                            it.todo
-                        ))
-                        recyclerViewAdapter.addTodos(tempList)
-                    }
-                }
-                is DataState.Error -> {
-                    Timber.e("Error")
-                }
-            }
+        viewModel.localTodoList.observe(viewLifecycleOwner){
+            recyclerViewAdapter.addTodos(it)
         }
     }
 

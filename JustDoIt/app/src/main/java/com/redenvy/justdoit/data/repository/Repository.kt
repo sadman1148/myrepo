@@ -1,5 +1,6 @@
 package com.redenvy.justdoit.data.repository
 
+import androidx.lifecycle.LiveData
 import com.redenvy.justdoit.data.localDB.TodoDAO
 import com.redenvy.justdoit.data.model.TodoListItem
 import com.redenvy.justdoit.data.network.APIService
@@ -8,9 +9,7 @@ import kotlinx.coroutines.flow.flow
 import java.lang.Exception
 import javax.inject.Inject
 
-class Repository @Inject constructor(
-    private val apiService: APIService,
-    private val todoDAO: TodoDAO) {
+class Repository @Inject constructor(private val apiService: APIService, private val todoDAO: TodoDAO) {
 
     suspend fun todoList() = flow {
         emit(DataState.Loading)
@@ -23,8 +22,8 @@ class Repository @Inject constructor(
         }
     }
 
-    suspend fun getData(){
-        todoDAO.getData()
+    fun getData() : LiveData<List<TodoListItem>>{
+        return todoDAO.getData()
     }
 
     suspend fun insertData(todoListItem : TodoListItem) {
