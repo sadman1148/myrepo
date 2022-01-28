@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background"
+        android:orientation="vertical"
+        tools:context=".ui.Fragments.DetailFragment">
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/detailTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dp20"
+            android:layout_marginTop="@dimen/dp20"
+            android:padding="@dimen/dp20"
+            android:textColor="@color/titles"
+            android:textSize="@dimen/sp40" />
+
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_marginStart="@dimen/dp20"
+            android:background="@color/logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:background="@color/background"
+                android:id="@+id/detailTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/dp20"
+                android:textColor="@color/subs"
+                android:textSize="@dimen/sp20" />
+
+            <TextView
+                android:layout_marginStart="@dimen/dp2"
+                android:background="@color/background"
+                android:id="@+id/detailDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/dp20"
+                android:textColor="@color/subs"
+                android:textSize="@dimen/sp20" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        <TextView
+            android:layout_marginTop="@dimen/dp20"
+            android:id="@+id/detailSubTodo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dp20"
+            android:padding="@dimen/dp20"
+            android:textColor="@color/titles"
+            android:textSize="@dimen/sp30" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/dp20"
+            android:gravity="center">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/detailEditButton"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dp20"
+                android:text="@string/edit"
+                android:textColor="@color/logo"
+                app:strokeColor="@color/logo" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/detailDeleteButton"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp20"
+                android:text="@string/delete"
+                android:textColor="@color/blood_red"
+                app:strokeColor="@color/blood_red" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</ScrollView>

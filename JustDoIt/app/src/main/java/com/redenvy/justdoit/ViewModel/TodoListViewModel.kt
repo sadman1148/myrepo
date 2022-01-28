@@ -2,13 +2,11 @@ package com.redenvy.justdoit.ViewModel
 
 import androidx.lifecycle.*
 import com.redenvy.justdoit.data.model.TodoList
-import com.redenvy.justdoit.data.model.TodoListItem
+import com.redenvy.justdoit.data.localDB.TodoListItem
 import com.redenvy.justdoit.data.repository.Repository
 import com.redenvy.justdoit.utils.DataState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.launchIn
-import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -19,19 +17,11 @@ class TodoListViewModel @Inject constructor(private val repo:Repository) : ViewM
 
     val localTodoList: LiveData<List<TodoListItem>> get() = repo.getData()
 
-    fun insertApiDataToLocalDb() {
-        viewModelScope.launch {
-            repo.todoList().onEach { it ->
-                when (it) {
-                    is DataState.Success -> {
-                        it.data.forEach() {
-                            val todoData = TodoListItem(it.id, it.time, it.title, it.todo)
-                            extraScope(todoData)
-                        }
-                        _todoList.value = it
-                    }
-                }
-            }.launchIn(viewModelScope)
+    lateinit var tempTodoListItem : TodoListItem
+
+    fun syncToLocalDbFromAPI() {
+        viewModelScope.launch (Dispatchers.Default) {
+            repo.syncToLocalDbFromAPI()
         }
     }
 
@@ -41,9 +31,15 @@ class TodoListViewModel @Inject constructor(private val repo:Repository) : ViewM
         }
     }
 
-    fun extraScope(todoData : TodoListItem){
-        viewModelScope.launch (Dispatchers.IO) {
-            repo.insertData(todoData)
+    fun deleteTodo(todoListItem : TodoListItem){
+        viewModelScope.launch (Dispatchers.Default) {
+            repo.delete(todoListItem)
+        }
+    }
+
+    fun getTodoById(id: String){
+        viewModelScope.launch (Dispatchers.Default) {
+            tempTodoListItem = repo.getTodoById(id)
         }
     }
 }

@@ -2,9 +2,6 @@ package com.redenvy.justdoit.data.localDB
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
-import com.redenvy.justdoit.data.model.TodoListItem
-import com.redenvy.justdoit.utils.DataState
-
 
 @Dao
 interface TodoDAO {
@@ -20,4 +17,7 @@ interface TodoDAO {
 
     @Query("DELETE FROM todolistitem")
     fun deleteAll()
+
+    @Query("SELECT * FROM todoListItem WHERE id LIKE :id")
+    fun getTodoById(id: String) : TodoListItem
 }

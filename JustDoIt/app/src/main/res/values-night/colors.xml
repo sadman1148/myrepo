@@ -15,5 +15,8 @@
     <color name="background">#000000</color>
     <color name="fab_bg_shadow">#2BFF14</color>
 
+    <color name="blood_red">#FF0000</color>
+
     <color name="grey">#119F00</color>
+    <color name="alt_grey">#2BFF14</color>
 </resources>

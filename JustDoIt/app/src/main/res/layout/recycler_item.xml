@@ -28,7 +28,7 @@
                     android:textSize="@dimen/sp16" />
 
                 <TextView
-                    android:id="@+id/itemTime"
+                    android:id="@+id/itemDate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/dp20"
@@ -45,11 +45,13 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center">
 
-                <ImageView
-                    android:layout_width="@dimen/dp35"
-                    android:layout_height="@dimen/dp35"
-                    android:layout_marginEnd="@dimen/dp10"
-                    android:src="@drawable/ic_baseline_clear_24" />
+                <TextView
+                    android:layout_marginEnd="@dimen/dp20"
+                    android:id="@+id/itemTime"
+                    android:textSize="@dimen/sp30"
+                    android:text="@string/placeHolderText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 

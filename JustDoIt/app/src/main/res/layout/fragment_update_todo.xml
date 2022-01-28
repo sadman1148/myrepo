@@ -24,16 +24,18 @@
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dp60"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/dp20"
             android:gravity="center_vertical">
 
             <EditText
-                android:id="@+id/editTodoTime"
+                android:id="@+id/newTodoTime"
                 android:layout_width="@dimen/dp0"
-                android:layout_height="wrap_content"
+                android:layout_height="@dimen/dp60"
+                android:layout_marginEnd="@dimen/dp10"
                 android:layout_weight="1"
                 android:background="@drawable/custom_input"
-                android:enabled="false"
+                android:focusable="false"
                 android:paddingStart="@dimen/dp10" />
 
             <com.google.android.material.button.MaterialButton
@@ -58,16 +60,34 @@
             android:paddingStart="@dimen/dp10"
             android:paddingTop="@dimen/dp10" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/updateButton"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginVertical="@dimen/dp10"
-            android:text="@string/update"
-            android:textColor="@color/logo"
-            app:strokeColor="@color/logo" />
+            android:layout_gravity="center">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/updateButton"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/dp10"
+                android:layout_marginEnd="@dimen/dp20"
+                android:text="@string/update"
+                android:textColor="@color/logo"
+                app:strokeColor="@color/logo" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/deleteButton"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/dp10"
+                android:layout_marginStart="@dimen/dp20"
+                android:text="@string/delete"
+                android:textColor="@color/blood_red"
+                app:strokeColor="@color/blood_red" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 

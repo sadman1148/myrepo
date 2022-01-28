@@ -2,28 +2,35 @@ package com.redenvy.justdoit.data.repository
 
 import androidx.lifecycle.LiveData
 import com.redenvy.justdoit.data.localDB.TodoDAO
-import com.redenvy.justdoit.data.model.TodoListItem
+import com.redenvy.justdoit.data.localDB.TodoListItem
 import com.redenvy.justdoit.data.network.APIService
-import com.redenvy.justdoit.utils.DataState
-import kotlinx.coroutines.flow.flow
-import java.lang.Exception
+import java.text.SimpleDateFormat
+import java.util.*
 import javax.inject.Inject
 
 class Repository @Inject constructor(private val apiService: APIService, private val todoDAO: TodoDAO) {
 
-    suspend fun todoList() = flow {
-        emit(DataState.Loading)
-        try {
-            val result = apiService.todoList()
-            emit(DataState.Success(result))
-        }
-        catch (e:Exception){
-            emit(DataState.Error(e))
+    suspend fun syncToLocalDbFromAPI(){
+        val result = apiService.todoList()
+        for (todoItem in result) {
+            val timeInMili = SimpleDateFormat("yyyy-MM-dd HH:mm a").parse(todoItem.time).time
+            if (timeInMili <= Calendar.getInstance().timeInMillis)
+                continue
+            todoDAO.insertData(TodoListItem(
+                todoItem.id,
+                timeInMili,
+                todoItem.title,
+                todoItem.todo)
+            )
         }
     }
 
     fun getData() : LiveData<List<TodoListItem>>{
         return todoDAO.getData()
+    }
+
+    suspend fun getTodoById(todoId: String) : TodoListItem{
+        return todoDAO.getTodoById(todoId)
     }
 
     suspend fun insertData(todoListItem : TodoListItem) {

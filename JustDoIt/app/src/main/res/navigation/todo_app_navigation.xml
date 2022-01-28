@@ -13,11 +13,11 @@
             android:id="@+id/action_mainFragment_to_addTodoFragment"
             app:destination="@id/addTodoFragment" />
         <action
-            android:id="@+id/action_mainFragment_to_updateTodoFragment"
-            app:destination="@id/updateTodoFragment" />
-        <action
             android:id="@+id/action_mainFragment_to_settingsFragment"
             app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
     </fragment>
     <fragment
         android:id="@+id/addTodoFragment"
@@ -34,8 +34,8 @@
         android:label="Update a Todo"
         tools:layout="@layout/fragment_update_todo" >
         <action
-            android:id="@+id/action_updateTodoFragment_to_mainFragment"
-            app:destination="@id/mainFragment" />
+            android:id="@+id/action_updateTodoFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
     </fragment>
     <fragment
         android:id="@+id/settingsFragment"
@@ -44,5 +44,17 @@
         <action
             android:id="@+id/action_settingsFragment_to_mainFragment"
             app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.redenvy.justdoit.ui.Fragments.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" >
+        <action
+            android:id="@+id/action_detailFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+        <action
+            android:id="@+id/action_detailFragment_to_updateTodoFragment"
+            app:destination="@id/updateTodoFragment" />
     </fragment>
 </navigation>

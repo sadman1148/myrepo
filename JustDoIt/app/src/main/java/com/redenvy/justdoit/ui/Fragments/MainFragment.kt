@@ -35,12 +35,13 @@ class MainFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        sync()
         initOnClicks()
         initRecycler()
     }
 
     private fun sync(){
-        viewModel.insertApiDataToLocalDb()
+        viewModel.syncToLocalDbFromAPI()
     }
 
     private fun initRecycler() {
