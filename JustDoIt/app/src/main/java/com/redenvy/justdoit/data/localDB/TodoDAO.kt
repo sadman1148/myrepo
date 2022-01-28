@@ -6,7 +6,7 @@ import androidx.room.*
 @Dao
 interface TodoDAO {
 
-    @Query("SELECT * FROM todolistitem")
+    @Query("SELECT * FROM todolistitem ORDER BY time ASC")
     fun getData() : LiveData<List<TodoListItem>>
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
@@ -18,6 +18,7 @@ interface TodoDAO {
     @Query("DELETE FROM todolistitem")
     fun deleteAll()
 
-    @Query("SELECT * FROM todoListItem WHERE id LIKE :id")
-    fun getTodoById(id: String) : TodoListItem
+    @Update
+    fun updateTodo(todoListItem: TodoListItem)
+
 }

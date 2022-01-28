@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import com.redenvy.justdoit.data.localDB.TodoDAO
 import com.redenvy.justdoit.data.localDB.TodoListItem
 import com.redenvy.justdoit.data.network.APIService
+import com.redenvy.justdoit.utils.Constants
 import java.text.SimpleDateFormat
 import java.util.*
 import javax.inject.Inject
@@ -13,7 +14,7 @@ class Repository @Inject constructor(private val apiService: APIService, private
     suspend fun syncToLocalDbFromAPI(){
         val result = apiService.todoList()
         for (todoItem in result) {
-            val timeInMili = SimpleDateFormat("yyyy-MM-dd HH:mm a").parse(todoItem.time).time
+            val timeInMili = SimpleDateFormat(Constants.PARSE_FROM_STRING_PATTERN).parse(todoItem.time).time
             if (timeInMili <= Calendar.getInstance().timeInMillis)
                 continue
             todoDAO.insertData(TodoListItem(
@@ -29,8 +30,8 @@ class Repository @Inject constructor(private val apiService: APIService, private
         return todoDAO.getData()
     }
 
-    suspend fun getTodoById(todoId: String) : TodoListItem{
-        return todoDAO.getTodoById(todoId)
+    suspend fun updateTodo(todoListItem: TodoListItem) {
+        todoDAO.updateTodo(todoListItem)
     }
 
     suspend fun insertData(todoListItem : TodoListItem) {

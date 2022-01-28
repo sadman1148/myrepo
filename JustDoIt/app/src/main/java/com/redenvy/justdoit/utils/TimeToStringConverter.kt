@@ -5,7 +5,7 @@ import java.util.*
 
 object TimeToStringConverter{
     fun TimeToString(time: Long): String {
-        val dateFormat = SimpleDateFormat(Constants.TIME_PATTERN)
+        val dateFormat = SimpleDateFormat(Constants.PARSE_FROM_STRING_PATTERN)
         return dateFormat.format(Date(time))
     }
 }

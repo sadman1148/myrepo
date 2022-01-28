@@ -32,10 +32,10 @@ class RecyclerViewAdapter : RecyclerView.Adapter<RecyclerViewAdapter.TodoViewHol
         fun bind(todo: TodoListItem) {
             binding.apply {
                 itemTitle.setText(todo.title)
-                val datetime = SimpleDateFormat("EE dd MMM yyyy hh:mm a").format(todo.time)
+                val datetime = SimpleDateFormat(Constants.FORMAT_TO_STRING_PATTERN).format(todo.time)
                 val timeList : List<String> = datetime.split(" ")
                 itemTime.setText(timeList[4]+" "+timeList[5])
-                itemDate.setText(timeList[1]+" "+timeList[2]+" "+timeList[3])
+                itemDate.setText(timeList[0]+" "+timeList[1]+" "+timeList[2]+" "+timeList[3])
                 touchable.setOnClickListener(){
                     it.findNavController().navigate(
                         R.id.action_mainFragment_to_detailFragment,

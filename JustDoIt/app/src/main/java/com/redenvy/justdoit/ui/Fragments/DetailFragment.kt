@@ -16,10 +16,9 @@ import com.redenvy.justdoit.R
 import com.redenvy.justdoit.ViewModel.TodoListViewModel
 import com.redenvy.justdoit.data.localDB.TodoListItem
 import com.redenvy.justdoit.databinding.FragmentDetailBinding
+import com.redenvy.justdoit.ui.Activity.MainActivity
 import com.redenvy.justdoit.utils.Constants
 import dagger.hilt.android.AndroidEntryPoint
-import timber.log.Timber
-import java.sql.Time
 import java.text.SimpleDateFormat
 
 @AndroidEntryPoint
@@ -51,7 +50,7 @@ class DetailFragment : Fragment() {
         todo = Gson().fromJson(receivedTodo, type)
 
         binding.detailTitle.setText(todo.title)
-        val datetime = SimpleDateFormat("EE dd MMM yyyy hh:mm a").format(todo.time)
+        val datetime = SimpleDateFormat(Constants.FORMAT_TO_STRING_PATTERN).format(todo.time)
         val timeList : List<String> = datetime.split(" ")
 
         binding.detailDate.setText(timeList[1]+" "+timeList[2]+"\n"+timeList[3])
@@ -79,9 +78,9 @@ class DetailFragment : Fragment() {
                 alertDialog?.show()
             }
             detailEditButton.setOnClickListener(){
-                findNavController().navigate(R.id.action_detailFragment_to_updateTodoFragment,
-                    bundleOf(Constants.BUNDLE_NAME to Gson().toJson(todo))
-                )
+                (activity as MainActivity?)?.tempTodoHolder = todo
+                findNavController().navigate(R.id.action_detailFragment_to_updateTodoFragment)
+//                bundleOf(Constants.BUNDLE_NAME to Gson().toJson(todo)
             }
         }
     }

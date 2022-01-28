@@ -28,4 +28,15 @@
     <string name="noTimeSet">Time not set</string>
     <string name="delete">Delete</string>
     <string name="edit">Edit</string>
+    <string name="exit_app">Exit App</string>
+    <string name="todo_added">Todo Added</string>
+    <string name="time">Time</string>
+    <string name="title_in_textform">Title</string>
+    <string name="comma_title">, Title</string>
+    <string name="subtask_in_textform">Subtask</string>
+    <string name="comma_subtask">, Subtask</string>
+    <string name="please_add_intextform">Please add </string>
+    <string name="todo_updated">Todo Updated</string>
+    <string name="no_new_changes">No new changes</string>
+    <string name="no_data_in_textfield">Please add data to empty textfields</string>
 </resources>

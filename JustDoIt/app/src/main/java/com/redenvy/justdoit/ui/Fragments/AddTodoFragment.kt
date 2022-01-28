@@ -13,6 +13,7 @@ import com.redenvy.justdoit.ViewModel.TodoListViewModel
 import com.redenvy.justdoit.data.localDB.TodoListItem
 import com.redenvy.justdoit.databinding.FragmentAddTodoBinding
 import com.redenvy.justdoit.ui.Activity.MainActivity
+import com.redenvy.justdoit.utils.Constants
 import com.redenvy.justdoit.utils.TimeToStringConverter
 import dagger.hilt.android.AndroidEntryPoint
 import jhonatan.sabadi.datetimepicker.showDateAndTimePicker
@@ -45,33 +46,33 @@ class AddTodoFragment : Fragment() {
                 var allow : Boolean = true
                 var alert : String = ""
                 if(binding.newTodoTime.text.toString().equals("")){
-                    alert += "Time"
+                    alert += getString(R.string.time)
                     allow = false
                 }
-                if (binding.newTodoTitle.text.toString().equals("")){
+                if (binding.newTodoTitle.text.toString().equals("") || binding.newTodoTitle.text.toString().equals(" ")){
                     if (alert.equals("")){
-                        alert += "Title"
+                        alert += getString(R.string.title_in_textform)
                     }else{
-                        alert += ", Title"
+                        alert += getString(R.string.comma_title)
                     }
                     binding.newTodoTitle.requestFocus()
                     allow = false
                 }
-                if (binding.newSubtodo.text.toString().equals("")){
+                if (binding.newSubtodo.text.toString().equals("") || binding.newSubtodo.text.toString().equals(" ")){
                     if (alert.equals("")){
-                        alert += "Subtask"
+                        alert += getString(R.string.subtask_in_textform)
                     }else{
-                        alert += ", Subtask"
+                        alert += getString(R.string.comma_subtask)
                     }
                     binding.newSubtodo.requestFocus()
                     allow = false
                 }
                 if (!allow){
-                    Toast.makeText(context, "Please add "+alert, Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, getString(R.string.please_add_intextform)+alert, Toast.LENGTH_SHORT).show()
                 }
                 if (allow){
                     val subTodoList : List<String> = binding.newSubtodo.text.toString().split("\n")
-                    val timeInMili = SimpleDateFormat("yyyy-MM-dd HH:mm a").parse(binding.newTodoTime.text.toString()).time
+                    val timeInMili = SimpleDateFormat(Constants.PARSE_FROM_STRING_PATTERN).parse(binding.newTodoTime.text.toString()).time
                     viewModel.insertNewTodo(
                         TodoListItem(
                             UUID.randomUUID().toString(),
@@ -80,11 +81,11 @@ class AddTodoFragment : Fragment() {
                             subTodoList
                         )
                     )
-                    Toast.makeText(context, "Add Successful", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, getString(R.string.todo_added), Toast.LENGTH_SHORT).show()
                     findNavController().navigate(R.id.action_addTodoFragment_to_mainFragment)
                 }
             }
-            addTimeButton.setOnClickListener(){
+            newTodoTime.setOnClickListener(){
                 timePicker()
             }
         }

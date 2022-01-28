@@ -37,9 +37,10 @@ class TodoListViewModel @Inject constructor(private val repo:Repository) : ViewM
         }
     }
 
-    fun getTodoById(id: String){
+    fun updateTodo(todoListItem: TodoListItem){
         viewModelScope.launch (Dispatchers.Default) {
-            tempTodoListItem = repo.getTodoById(id)
+            repo.updateTodo(todoListItem)
         }
     }
+
 }

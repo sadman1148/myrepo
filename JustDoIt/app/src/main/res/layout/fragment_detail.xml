@@ -13,7 +13,6 @@
         android:orientation="vertical"
         tools:context=".ui.Fragments.DetailFragment">
 
-
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/detailTitle"
             android:layout_width="match_parent"
@@ -70,20 +69,26 @@
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/detailEditButton"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                android:layout_width="wrap_content"
+                android:layout_width="@dimen/dp0"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp40"
                 android:layout_marginEnd="@dimen/dp20"
                 android:text="@string/edit"
+                android:layout_weight="1"
+                android:drawableLeft="@drawable/ic_baseline_edit_24"
                 android:textColor="@color/logo"
                 app:strokeColor="@color/logo" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/detailDeleteButton"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                android:layout_width="wrap_content"
+                android:layout_width="@dimen/dp0"
+                android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/dp20"
+                android:layout_marginEnd="@dimen/dp40"
                 android:text="@string/delete"
+                android:drawableLeft="@drawable/ic_baseline_delete_forever_24"
                 android:textColor="@color/blood_red"
                 app:strokeColor="@color/blood_red" />
 
