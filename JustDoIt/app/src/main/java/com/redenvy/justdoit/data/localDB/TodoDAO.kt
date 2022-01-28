@@ -21,4 +21,7 @@ interface TodoDAO {
     @Update
     fun updateTodo(todoListItem: TodoListItem)
 
+    @Query("SELECT * FROM todolistitem WHERE id LIKE :id")
+    fun getTodoById(id:String):TodoListItem
+
 }

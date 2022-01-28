@@ -17,13 +17,6 @@ import java.util.*
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
-    var tempTodoHolder : TodoListItem = TodoListItem(
-        "dummy id",
-        SimpleDateFormat(Constants.PARSE_FROM_STRING_PATTERN).parse("1998-01-11 01:00 PM").time,
-        "dummy title",
-        listOf("dummy1","dummy2")
-    )
-    fun sendTodoToFrag() : TodoListItem = tempTodoHolder
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {

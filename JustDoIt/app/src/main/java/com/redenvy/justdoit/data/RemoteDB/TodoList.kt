@@ -1,3 +1,3 @@
-package com.redenvy.justdoit.data.model
+package com.redenvy.justdoit.data.RemoteDB
 
 class TodoList : ArrayList<TodoListItems>()

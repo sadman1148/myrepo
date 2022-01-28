@@ -26,6 +26,10 @@ class Repository @Inject constructor(private val apiService: APIService, private
         }
     }
 
+    suspend fun getTodoById(id : String) : TodoListItem{
+        return todoDAO.getTodoById(id)
+    }
+
     fun getData() : LiveData<List<TodoListItem>>{
         return todoDAO.getData()
     }

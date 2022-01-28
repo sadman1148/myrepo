@@ -1,7 +1,5 @@
-package com.redenvy.justdoit.data.model
+package com.redenvy.justdoit.data.RemoteDB
 
-import androidx.room.Entity
-import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
 data class TodoListItems(

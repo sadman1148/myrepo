@@ -1,7 +1,7 @@
 package com.redenvy.justdoit.ViewModel
 
 import androidx.lifecycle.*
-import com.redenvy.justdoit.data.model.TodoList
+import com.redenvy.justdoit.data.RemoteDB.TodoList
 import com.redenvy.justdoit.data.localDB.TodoListItem
 import com.redenvy.justdoit.data.repository.Repository
 import com.redenvy.justdoit.utils.DataState
@@ -30,6 +30,13 @@ class TodoListViewModel @Inject constructor(private val repo:Repository) : ViewM
             repo.insertData(todoListItem)
         }
     }
+
+    //TODO: Fix this
+//    suspend fun getTodoById(id : String) : TodoListItem{
+//        viewModelScope.launch (Dispatchers.Default) {
+//            return repo.getTodoById(id)
+//        }
+//    }
 
     fun deleteTodo(todoListItem : TodoListItem){
         viewModelScope.launch (Dispatchers.Default) {
