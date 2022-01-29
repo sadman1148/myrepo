@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.fragments.AddFragment"
+    android:paddingStart="@dimen/scrollViewPaddingStart"
+    android:paddingEnd="@dimen/scrollViewPaddingEnd"
+    android:paddingBottom="@dimen/scrollViewPaddingBottom">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/plusImageViewLayoutMarginTop"
+            android:background="@drawable/ic_add_black_24dp"
+            android:scaleType="centerCrop" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/addATaskTextViewLayoutMarginTop"
+            android:text="@string/addATask"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/addATaskTextSize" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/fillTheDetailsTextViewLayoutMarginTop"
+            android:text="@string/fillTheDetails"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/fillTheDetailsTextSize" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/taskTitleTextViewMarginStart"
+            android:layout_marginTop="@dimen/taskTitleTextViewMarginTop"
+            android:text="@string/taskTitle"
+            android:textSize="@dimen/taskTitleTextSize" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/addTaskTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/addTaskTitleEditTextMarginTop"
+            android:background="@drawable/btn_border"
+            android:padding="@dimen/addTaskTitleEditTextPadding"
+            android:singleLine="true"
+            android:textSize="@dimen/addTaskTitleTextSize" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="@dimen/taskDateAndTimeLayoutWidth"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingStart="@dimen/taskDateAndTimeTextViewPaddingStart"
+                android:paddingTop="@dimen/taskDateAndTimeTextViewPaddingTop"
+                android:text="@string/taskDateAndTime"
+                android:textSize="@dimen/taskDateAndTimeTextSize" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/dateTimeBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dateTimeBtnLayoutHeight"
+                android:layout_marginEnd="@dimen/dateTimeBtnLayoutMarginEnd"
+                android:drawableStart="@drawable/ic_baseline_calendar"
+                android:text="@string/date" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/taskDateTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/taskDateTimeEditTextLayoutMarginTop"
+            android:background="@drawable/btn_border"
+            android:focusable="false"
+            android:padding="@dimen/taskDateTimeEditTextPadding"
+            android:singleLine="true"
+            android:textSize="@dimen/taskDateTimeEditTextSize" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/addSubtasksTextViewMarginStart"
+            android:paddingTop="@dimen/addSubtasksTextViewPaddingTop"
+            android:text="@string/addSubtasks"
+            android:textSize="@dimen/addSubtasksTextSize" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/subTask"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/subTaskEditTextMarginTop"
+            android:background="@drawable/btn_border"
+            android:inputType="textMultiLine"
+            android:padding="@dimen/subTaskEditTextPadding"
+            android:textSize="@dimen/subTaskEditTextSize" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/addTaskBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/addTaskBtnLayoutMarginTop"
+            android:background="@drawable/btn_background"
+            android:text="@string/addTaskBtn"
+            android:textColor="@color/colorPrimary" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+</ScrollView>

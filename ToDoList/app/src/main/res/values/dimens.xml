@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="scrollViewPaddingStart">20dp</dimen>
+    <dimen name="scrollViewPaddingEnd">20dp</dimen>
+    <dimen name="scrollViewPaddingBottom">50dp</dimen>
+    <dimen name="plusImageViewLayoutMarginTop">20dp</dimen>
+    <dimen name="addATaskTextViewLayoutMarginTop">20dp</dimen>
+    <dimen name="addATaskTextSize">22sp</dimen>
+    <dimen name="fillTheDetailsTextSize">20sp</dimen>
+    <dimen name="fillTheDetailsTextViewLayoutMarginTop">10dp</dimen>
+    <dimen name="taskTitleTextViewMarginStart">3dp</dimen>
+    <dimen name="taskTitleTextViewMarginTop">30dp</dimen>
+    <dimen name="taskTitleTextSize">20sp</dimen>
+    <dimen name="addTaskTitleEditTextMarginTop">5dp</dimen>
+    <dimen name="addTaskTitleEditTextPadding">10dp</dimen>
+    <dimen name="addTaskTitleTextSize">14sp</dimen>
+    <dimen name="taskDateAndTimeTextViewPaddingStart">3dp</dimen>
+    <dimen name="taskDateAndTimeLayoutWidth">0dp</dimen>
+    <dimen name="taskDateAndTimeTextViewPaddingTop">20dp</dimen>
+    <dimen name="taskDateAndTimeTextSize">20sp</dimen>
+    <dimen name="dateTimeBtnLayoutHeight">45dp</dimen>
+    <dimen name="dateTimeBtnLayoutMarginEnd">5dp</dimen>
+    <dimen name="taskDateTimeEditTextLayoutMarginTop">5dp</dimen>
+    <dimen name="taskDateTimeEditTextPadding">10dp</dimen>
+    <dimen name="taskDateTimeEditTextSize">14sp</dimen>
+    <dimen name="addSubtasksTextViewMarginStart">3dp</dimen>
+    <dimen name="addSubtasksTextViewPaddingTop">20dp</dimen>
+    <dimen name="addSubtasksTextSize">20sp</dimen>
+    <dimen name="subTaskEditTextMarginTop">5dp</dimen>
+    <dimen name="subTaskEditTextPadding">10dp</dimen>
+    <dimen name="subTaskEditTextSize">14sp</dimen>
+    <dimen name="addTaskBtnLayoutMarginTop">40dp</dimen>
+</resources>
