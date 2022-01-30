@@ -1,19 +1,12 @@
 <PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <PreferenceCategory app:title="@string/messages_header">
+    <PreferenceCategory app:title="Signature">
 
         <EditTextPreference
             app:key="signature"
-            app:title="@string/signature_title"
-            app:useSimpleSummaryProvider="true" />
+            app:title="Shakiba Sanjana Adrika"
+            app:useSimpleSummaryProvider="false" />
 
-        <ListPreference
-            app:defaultValue="reply"
-            app:entries="@array/reply_entries"
-            app:entryValues="@array/reply_values"
-            app:key="reply"
-            app:title="@string/reply_title"
-            app:useSimpleSummaryProvider="true" />
 
     </PreferenceCategory>
 
@@ -21,15 +14,18 @@
 
         <SwitchPreferenceCompat
             app:key="sync"
-            app:title="@string/sync_title" />
-
+            app:summaryOff="Turn on to sync task list with server on 1 am at night
+everyday"
+            app:summaryOn="Turn off to don't sync task list with server on 1 am at night
+everyday" />
+    </PreferenceCategory>
+    app:title="Sync periodically" />
+    <PreferenceCategory app:title="Theme">
         <SwitchPreferenceCompat
-            app:dependency="sync"
-            app:key="attachment"
-            app:summaryOff="@string/attachment_summary_off"
-            app:summaryOn="@string/attachment_summary_on"
-            app:title="@string/attachment_title" />
-
+            app:key="themeChange"
+            app:summaryOff="Turn on to active night mode"
+            app:summaryOn="Turn off to active light mode"
+            app:title="Theme" />
     </PreferenceCategory>
 
 </PreferenceScreen>

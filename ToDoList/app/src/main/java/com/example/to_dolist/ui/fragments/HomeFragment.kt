@@ -20,19 +20,17 @@ import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
 import java.util.*
 
-
 @AndroidEntryPoint
-class HomeFragment : Fragment(){
+class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
     private val viewModel: TodoListViewModel by viewModels()
     var sharedPreferences: SharedPreferences? = null
     private val recyclerViewAdapter: RecyclerViewAdapter by lazy {
         RecyclerViewAdapter()
     }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View? {
         // Inflate the layout for this fragment
         binding = FragmentHomeBinding.inflate(inflater, container, false)
@@ -45,15 +43,15 @@ class HomeFragment : Fragment(){
         val c: Calendar = Calendar.getInstance()
         val timeOfDay: Int = c.get(Calendar.HOUR_OF_DAY)
         if (timeOfDay >= 0 && timeOfDay < 5) {
-            binding.greetings.setText("Good Night")
+            binding.timeOfDay.setText("Good Night")
         } else if (timeOfDay >= 5 && timeOfDay < 12) {
-            binding.greetings.setText("Good Morning")
+            binding.timeOfDay.setText("Good Morning")
         } else if (timeOfDay >= 12 && timeOfDay < 17) {
-            binding.greetings.setText("Good Afternoon")
+            binding.timeOfDay.setText("Good Afternoon")
         } else if (timeOfDay >= 17 && timeOfDay < 21) {
-            binding.greetings.setText("Good Evening")
+            binding.timeOfDay.setText("Good Evening")
         } else if (timeOfDay >= 21 && timeOfDay < 24) {
-            binding.greetings.setText("Good Night")
+            binding.timeOfDay.setText("Good Night")
         }
     }
 
@@ -68,27 +66,30 @@ class HomeFragment : Fragment(){
         val booleanValue = sharedPreferences!!.getBoolean("night_mode", true)
         if (booleanValue) {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-            binding.themeChange.setChecked(true)
+            //binding.themeChange.setChecked(true)
         }
         binding.apply {
             addTask.setOnClickListener {
                 findNavController().navigate(R.id.action_homeFragment_to_addFragment)
             }
-            themeChange.setOnClickListener {
-                if (themeChange.isChecked) {
-                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-                    themeChange.setChecked(true)
-                    val editor = sharedPreferences!!.edit()
-                    editor.putBoolean("night_mode", true)
-                    editor.commit()
-                } else {
-                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-                    themeChange.setChecked(false)
-                    val editor = sharedPreferences!!.edit()
-                    editor.putBoolean("night_mode", false)
-                    editor.commit()
-                }
+            settingsIcon.setOnClickListener {
+                findNavController().navigate(R.id.action_homeFragment_to_settingsActivity)
             }
+//            themeChange.setOnClickListener {
+//                if (themeChange.isChecked) {
+//                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+//                    themeChange.setChecked(true)
+//                    val editor = sharedPreferences!!.edit()
+//                    editor.putBoolean("night_mode", true)
+//                    editor.commit()
+//                } else {
+//                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+//                    themeChange.setChecked(false)
+//                    val editor = sharedPreferences!!.edit()
+//                    editor.putBoolean("night_mode", false)
+//                    editor.commit()
+//                }
+//            }
         }
     }
 
@@ -104,7 +105,7 @@ class HomeFragment : Fragment(){
     }
 
     private fun init() {
-        //viewModel.syncToLocalDB()
+        viewModel.syncToLocalDB()
     }
 
     fun deleteTodo(id: String) {

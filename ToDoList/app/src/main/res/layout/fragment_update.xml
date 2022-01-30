@@ -1,110 +1,134 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     android:orientation="vertical"
-    tools:context=".ui.fragments.UpdateFragment"
-    android:paddingStart="@dimen/scrollViewPaddingStart"
-    android:paddingEnd="@dimen/scrollViewPaddingEnd"
-    android:paddingBottom="@dimen/scrollViewPaddingBottom">
+    android:scrollbars="none"
+    tools:context=".ui.fragments.DetailsFragment">
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/dp_20"
+        android:paddingEnd="@dimen/dp_20"
+        android:paddingBottom="@dimen/dp_50">
 
-
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/dp_35"
+            android:layout_height="@dimen/dp_35"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="@dimen/addATaskTextViewLayoutMarginTop"
+            android:layout_marginTop="@dimen/dp_80"
+            android:background="@drawable/edit" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
             android:text="@string/updateTheTask"
-            android:textColor="@android:color/black"
-            android:textSize="@dimen/addATaskTextSize" />
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_35"
+            android:textStyle="bold" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/taskTitleTextViewMarginStart"
-            android:layout_marginTop="@dimen/taskTitleTextViewMarginTop"
-            android:text="@string/taskTitle"
-            android:textSize="@dimen/taskTitleTextSize" />
-
-        <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/updateTaskTitle"
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/addTaskTitleEditTextMarginTop"
-            android:background="@drawable/btn_border"
-            android:padding="@dimen/addTaskTitleEditTextPadding"
-            android:singleLine="true"
-            android:textSize="@dimen/addTaskTitleTextSize" />
+            android:scrollbars="none">
 
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="@dimen/taskDateAndTimeLayoutWidth"
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:paddingStart="@dimen/taskDateAndTimeTextViewPaddingStart"
-                android:paddingTop="@dimen/taskDateAndTimeTextViewPaddingTop"
-                android:text="@string/taskDateAndTime"
-                android:textSize="@dimen/taskDateAndTimeTextSize" />
+                android:orientation="vertical">
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/updateDateTimeBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="@dimen/dateTimeBtnLayoutHeight"
-                android:layout_marginEnd="@dimen/dateTimeBtnLayoutMarginEnd"
-                android:drawableStart="@drawable/ic_baseline_calendar"
-                android:text="@string/date" />
-        </androidx.appcompat.widget.LinearLayoutCompat>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="44dp"
+                    android:text="@string/taskTitle"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_22"
+                    android:textStyle="bold" />
 
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/updateTaskTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:background="@drawable/btn_border"
+                    android:padding="@dimen/dp_10"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_22" />
 
-        <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/updateTaskDateTime"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/taskDateTimeEditTextLayoutMarginTop"
-            android:background="@drawable/btn_border"
-            android:focusable="false"
-            android:padding="@dimen/taskDateTimeEditTextPadding"
-            android:singleLine="true"
-            android:textSize="@dimen/taskDateTimeEditTextSize" />
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/addSubtasksTextViewMarginStart"
-            android:paddingTop="@dimen/addSubtasksTextViewPaddingTop"
-            android:text="@string/subtasks"
-            android:textSize="@dimen/addSubtasksTextSize" />
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_20"
+                        android:layout_weight="2"
+                        android:text="@string/taskDateAndTime"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/sp_22"
+                        android:textStyle="bold" />
 
-        <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/updateSubTask"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/subTaskEditTextMarginTop"
-            android:background="@drawable/btn_border"
-            android:inputType="textMultiLine"
-            android:padding="@dimen/subTaskEditTextPadding"
-            android:textSize="@dimen/subTaskEditTextSize" />
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/updateDateTimeBtn"
+                        android:layout_width="@dimen/dp_0"
+                        android:layout_height="@dimen/dp_35"
+                        android:layout_marginTop="@dimen/dp_20"
+                        android:layout_weight="1"
+                        android:paddingLeft="@dimen/dp_80"
+                        android:src="@drawable/calendar"
+                        android:text="@string/date" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/updateTaskBtn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/addTaskBtnLayoutMarginTop"
-            android:background="@drawable/btn_background"
-            android:text="@string/updateTask"
-            android:textColor="@color/colorPrimary" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/updateTaskDateTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:background="@drawable/btn_border"
+                    android:padding="@dimen/dp_10"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_22" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:text="@string/subtasks"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_22"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/updateSubTask"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:background="@drawable/btn_border"
+                    android:padding="@dimen/dp_10"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_22" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/updateTaskBtn"
+                    android:layout_width="@dimen/dp_200"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/dp_40"
+                    android:background="@drawable/btn_background"
+                    android:text="@string/updateTask" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </ScrollView>
+
     </androidx.appcompat.widget.LinearLayoutCompat>
 
-
-</ScrollView>
+</androidx.appcompat.widget.LinearLayoutCompat>

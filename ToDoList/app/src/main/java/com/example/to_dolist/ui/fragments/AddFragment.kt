@@ -26,7 +26,7 @@ class AddFragment : Fragment() {
     private val viewModel: TodoListViewModel by viewModels()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View? {
         binding = FragmentAddBinding.inflate(inflater, container, false)
         return binding.root
@@ -86,16 +86,18 @@ class AddFragment : Fragment() {
         val subTasks: String = binding.subTask.text.toString()
         val subTaskArray: List<String> = subTasks.split("\n")
         val timeInMili =
-            SimpleDateFormat("yyyy-MM-dd HH:mm a").parse(binding.taskDateTime.text.toString()).time
-             viewModel.insertTodo(
-                 TodoListItem(
-                     UUID.randomUUID().toString(),
-                     timeInMili,
-                     binding.addTaskTitle.text.toString(),
-                     subTaskArray
-
-                 )
-             )
+            SimpleDateFormat("yyyy-MM-dd hh:mm aa").parse(binding.taskDateTime.text.toString()).time
+        viewModel.insertTodo(
+            TodoListItem(
+                UUID.randomUUID().toString(),
+                timeInMili,
+                binding.addTaskTitle.text.toString(),
+                subTaskArray
+            )
+        )
+        Toast.makeText(activity,
+            "Added successfully",
+            Toast.LENGTH_SHORT).show();
     }
 
     private fun dateTimePicker() {

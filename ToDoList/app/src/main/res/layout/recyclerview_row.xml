@@ -2,9 +2,9 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="@dimen/dp150"
-    app:cardCornerRadius="@dimen/dp20"
+    android:layout_width="380dp"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="22dp"
     app:cardElevation="@dimen/dp10"
     app:cardUseCompatPadding="true"
     app:contentPadding="@dimen/dp10">
@@ -28,7 +28,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:text="Nov"
-                android:textColor="@color/textColor"
+                android:textColor="@color/black"
+                android:textStyle="bold"
                 android:textSize="@dimen/sp20" />
 
             <TextView
@@ -37,7 +38,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:text="10"
-                android:textColor="@color/textColor"
+                android:textColor="@color/teal_200"
+                android:textStyle="bold"
                 android:textSize="@dimen/sp20" />
 
             <TextView
@@ -46,7 +48,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:text="1998"
-                android:textColor="@color/textColor"
+                android:textColor="@color/black"
+                android:textStyle="bold"
                 android:textSize="@dimen/sp20" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
@@ -69,7 +72,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/dp10"
-                android:textColor="@color/textColor"
+                android:textColor="@color/Highlight_text"
+                android:textStyle="bold"
                 android:textSize="@dimen/sp20"
                 tools:text="Happy Birthday" />
 
@@ -86,16 +90,18 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:text="07:00 AM"
-                android:textColor="@color/textColor"
-                android:textSize="@dimen/sp30" />
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="@dimen/sp_26" />
             <TextView
                 android:id="@+id/day_of_week"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
                 android:text="Tue"
+                android:textStyle="bold"
                 android:textColor="@color/textColor"
-                android:textSize="@dimen/sp30" />
+                android:textSize="@dimen/sp20" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 

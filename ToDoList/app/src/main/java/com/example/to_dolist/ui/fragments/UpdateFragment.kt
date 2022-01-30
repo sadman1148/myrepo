@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
@@ -33,7 +34,7 @@ class UpdateFragment : Fragment() {
     private val viewModel: TodoListViewModel by viewModels()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View? {
         binding = FragmentUpdateBinding.inflate(inflater, container, false)
         return binding.root
@@ -50,7 +51,7 @@ class UpdateFragment : Fragment() {
         val type = object : TypeToken<TodoListItem>() {}.type
         todo = Gson().fromJson(data, type)
         binding.updateTaskTitle.setText(todo.title)
-        val datetime = SimpleDateFormat("EE dd MMM yyyy hh:mm a").format(todo.time)
+        val datetime = SimpleDateFormat("EE dd MMM yyyy hh:mm aa").format(todo.time)
         binding.updateTaskDateTime.setText(datetime)
         binding.updateSubTask.setText(todo.todo.joinToString("\n"))
 
@@ -65,10 +66,10 @@ class UpdateFragment : Fragment() {
                 val title: String = binding.updateTaskTitle.text.toString()
                 val subTasks: String = binding.updateSubTask.text.toString()
                 val subTaskArray: List<String> = subTasks.split("\n")
-                val datetime = SimpleDateFormat("EE dd MMM yyyy hh:mm a").format(todo.time)
+                val datetime = SimpleDateFormat("EE dd MMM yyyy hh:mm aa").format(todo.time)
                 if (!binding.updateTaskDateTime.text.toString().equals(datetime)) {
                     val timeInMili =
-                        SimpleDateFormat("yyyy-MM-dd HH:mm a").parse(binding.updateTaskDateTime.text.toString()).time
+                        SimpleDateFormat("yyyy-MM-dd hh:mm aa").parse(binding.updateTaskDateTime.text.toString()).time
                     viewModel.updateTodoList(
                         TodoListItem(
                             todo.id,
@@ -77,6 +78,7 @@ class UpdateFragment : Fragment() {
                             subTaskArray
                         )
                     )
+
                 } else {
                     viewModel.updateTodoList(
                         TodoListItem(
@@ -87,8 +89,11 @@ class UpdateFragment : Fragment() {
                         )
                     )
                 }
+                Toast.makeText(activity,
+                    "Successfully updated",
+                    Toast.LENGTH_SHORT).show();
                 val data = bundleOf(Constants.PACKAGE_NAME to Gson().toJson(todo))
-                findNavController().navigate(R.id.action_updateFragment_to_detailsFragment,data)
+                findNavController().navigate(R.id.action_updateFragment_to_detailsFragment, data)
 
             }
         }

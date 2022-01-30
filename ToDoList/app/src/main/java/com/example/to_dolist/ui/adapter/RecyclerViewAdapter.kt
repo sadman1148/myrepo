@@ -33,9 +33,15 @@ class RecyclerViewAdapter : RecyclerView.Adapter<RecyclerViewAdapter.TodoViewHol
         RecyclerView.ViewHolder(binding.root) {
         fun bind(todo: TodoListItem) {
             binding.apply {
-                tvTitle.text = todo.title
-                val datetime = SimpleDateFormat("EE dd MMM yyyy hh:mm a").format(todo.time)
-                tvTime.text = datetime
+                todoTitle.text = todo.title
+                val datetime = SimpleDateFormat("EE dd MMM yyyy hh:mm aa").format(todo.time)
+                val dateTimeList : List<String> = datetime.split(" ")
+                time.text = dateTimeList[4] +" "+ dateTimeList[5]
+                dayOfWeek.text = dateTimeList[0]
+                date.text = dateTimeList[1]
+                month.text = dateTimeList[2]
+                year.text = dateTimeList[3]
+
                 recyclerItem.setOnClickListener {
                     val data = bundleOf(Constants.PACKAGE_NAME to Gson().toJson(todo))
                     it.findNavController()

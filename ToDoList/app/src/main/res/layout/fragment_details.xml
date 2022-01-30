@@ -1,109 +1,129 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     android:orientation="vertical"
-    android:paddingStart="@dimen/scrollViewPaddingStart"
-    android:paddingEnd="@dimen/scrollViewPaddingEnd"
-    android:paddingBottom="@dimen/scrollViewPaddingBottom"
+    android:scrollbars="none"
     tools:context=".ui.fragments.DetailsFragment">
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/dp_20"
+        android:paddingEnd="@dimen/dp_20"
+        android:paddingBottom="@dimen/dp_50">
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/addATaskTextViewLayoutMarginTop"
-            android:background="@color/bright_yellow"
-            android:gravity="center"
-            android:text="@string/taskDetails"
-            android:textColor="@color/white"
-            android:textSize="@dimen/addATaskTextSize"
-            android:textStyle="bold" />
-
-
-        <androidx.appcompat.widget.AppCompatTextView
+        <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/taskTitleTextViewMarginStart"
-            android:layout_marginTop="@dimen/taskTitleTextViewMarginTop"
-            android:text="@string/taskTitle"
-            android:textSize="@dimen/taskTitleTextSize" />
+            android:orientation="horizontal">
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/showTaskTitle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/addTaskTitleEditTextMarginTop"
-            android:background="@drawable/btn_border"
-            android:padding="@dimen/addTaskTitleEditTextPadding"
-            android:singleLine="true"
-            android:textSize="@dimen/addTaskTitleTextSize" />
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/moreVertical"
+                android:layout_width="@dimen/dp_25"
+                android:layout_height="@dimen/dp_25"
+                android:layout_marginLeft="@dimen/dp_340"
+                android:layout_marginTop="@dimen/dp_20"
+                android:src="@drawable/vertical_more" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="@dimen/taskDateAndTimeLayoutWidth"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:paddingStart="@dimen/taskDateAndTimeTextViewPaddingStart"
-                android:paddingTop="@dimen/taskDateAndTimeTextViewPaddingTop"
-                android:text="@string/taskDateAndTime"
-                android:textSize="@dimen/taskDateAndTimeTextSize" />
 
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/dp_90"
+                android:layout_height="@dimen/dp_70"
+                android:layout_marginTop="@dimen/dp_150"
+                android:src="@drawable/woman" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_180"
+                android:gravity="center"
+                android:paddingRight="@dimen/dp_80"
+                android:text="@string/taskDetails"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_35"
+                android:textStyle="bold" />
         </androidx.appcompat.widget.LinearLayoutCompat>
 
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/showTaskDateTime"
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/taskDateTimeEditTextLayoutMarginTop"
-            android:background="@drawable/btn_border"
-            android:focusable="false"
-            android:padding="@dimen/taskDateTimeEditTextPadding"
-            android:singleLine="true"
-            android:textSize="@dimen/taskDateTimeEditTextSize" />
+            android:layout_height="wrap_content">
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/addSubtasksTextViewMarginStart"
-            android:paddingTop="@dimen/addSubtasksTextViewPaddingTop"
-            android:text="@string/subtasks"
-            android:textSize="@dimen/addSubtasksTextSize" />
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/showSubTask"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/subTaskEditTextMarginTop"
-            android:background="@drawable/btn_border"
-            android:inputType="textMultiLine"
-            android:padding="@dimen/subTaskEditTextPadding"
-            android:textSize="@dimen/subTaskEditTextSize" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_15"
+                    android:text="@string/taskTitle"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_22"
+                    android:textStyle="bold" />
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/deleteBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:src="@drawable/ic_baseline_delete" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/showTaskTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:background="@drawable/btn_border"
+                    android:padding="@dimen/dp_10"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_22" />
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/editBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:src="@drawable/ic_baseline_edit" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:text="@string/taskDateAndTime"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_22"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/showTaskDateTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:background="@drawable/btn_border"
+                    android:padding="@dimen/dp_10"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_22" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:text="@string/subtasks"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_22"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/showSubTask"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:background="@drawable/btn_border"
+                    android:padding="@dimen/dp_10"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_22" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </ScrollView>
+
     </androidx.appcompat.widget.LinearLayoutCompat>
 
 
-</ScrollView>
+</androidx.appcompat.widget.LinearLayoutCompat>

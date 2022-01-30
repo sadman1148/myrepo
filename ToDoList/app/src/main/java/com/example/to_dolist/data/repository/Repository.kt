@@ -15,7 +15,7 @@ class Repository @Inject constructor(private val apiService: ApiService,private 
     suspend fun insertTodoFromApiToLocalDB(){
         val result = apiService.todoList()
         for (todoItem in result) {
-            val timeInMili = SimpleDateFormat("yyyy-MM-dd HH:mm a").parse(todoItem.time).time
+            val timeInMili = SimpleDateFormat("yyyy-MM-dd hh:mm aa").parse(todoItem.time).time
             if (timeInMili <= Calendar.getInstance().timeInMillis)
                 continue
             todoListDao.insertTodoList(TodoListItem(

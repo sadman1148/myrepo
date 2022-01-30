@@ -26,21 +26,22 @@
                 android:layout_weight="1">
 
                 <ImageView
-                    android:id="@+id/sync_icon"
-                    android:layout_width="@dimen/dp35"
-                    android:layout_height="@dimen/dp35"
+                    android:id="@+id/settings_icon"
+                    android:layout_width="@dimen/dp_32"
+                    android:layout_height="@dimen/dp_32"
+                    android:layout_gravity="center_vertical"
                     android:layout_margin="@dimen/dp30"
-                    android:src="@drawable/cloud_sync" />
+                    android:src="@drawable/setting" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
-            <ImageView
-                android:id="@+id/settings_icon"
-                android:layout_width="@dimen/dp30"
-                android:layout_height="@dimen/dp30"
-                android:layout_gravity="center_vertical"
-                android:layout_margin="@dimen/dp30"
-                android:src="@drawable/gear" />
+            <!--            <ImageView-->
+            <!--                android:id="@+id/sync_icon"-->
+            <!--                android:layout_width="@dimen/dp30"-->
+            <!--                android:layout_height="@dimen/dp30"-->
+            <!--                android:layout_gravity="center_vertical"-->
+            <!--                android:layout_margin="@dimen/dp30"-->
+            <!--                android:src="@drawable/setting" />-->
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -49,43 +50,52 @@
             android:layout_height="wrap_content">
 
             <androidx.appcompat.widget.LinearLayoutCompat
-                android:orientation="vertical"
-                android:layout_weight="1"
                 android:layout_width="@dimen/dp0"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/dp30"
-                    android:layout_marginTop="@dimen/dp30"
+                    android:layout_marginTop="@dimen/dp_15"
                     android:text="@string/hello_adrika"
                     android:textColor="@color/textColor"
-                    android:textSize="@dimen/sp30" />
+                    android:textSize="@dimen/sp30"
+                    android:textStyle="bold" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/time_of_day"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/dp30"
-                    android:layout_marginTop="@dimen/dp10"
+                    android:layout_marginTop="@dimen/dp_5"
                     android:layout_marginBottom="@dimen/dp20"
-                    android:textColor="@color/subTextColor"
-                    android:textSize="@dimen/sp16" />
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_22"
+                    android:textStyle="bold" />
             </androidx.appcompat.widget.LinearLayoutCompat>
 
             <ImageView
-                android:layout_marginEnd="@dimen/dp30"
-                android:layout_marginTop="@dimen/dp30"
-                android:src="@drawable/girl"
                 android:layout_width="@dimen/dp70"
-                android:layout_height="@dimen/dp70"/>
+                android:layout_height="@dimen/dp70"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="@dimen/dp30"
+                android:src="@drawable/girl" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/taskRecycler"
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/taskRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_10" />
+        </ScrollView>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -94,9 +104,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
-        android:backgroundTint="@color/bright_yellow"
+        android:backgroundTint="@color/teal_200"
         android:src="@drawable/add_24dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
