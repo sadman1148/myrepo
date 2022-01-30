@@ -1,8 +1,8 @@
 package com.redenvy.justdoit.ViewModel
 
 import androidx.lifecycle.*
-import com.redenvy.justdoit.data.RemoteDB.TodoList
-import com.redenvy.justdoit.data.localDB.TodoListItem
+import com.redenvy.justdoit.data.Remote.TodoList
+import com.redenvy.justdoit.data.local.TodoListItem
 import com.redenvy.justdoit.data.repository.Repository
 import com.redenvy.justdoit.utils.DataState
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -16,6 +16,9 @@ class TodoListViewModel @Inject constructor(private val repo:Repository) : ViewM
     val todoLists: LiveData<DataState<TodoList>> get() = _todoList
 
     val localTodoList: LiveData<List<TodoListItem>> get() = repo.getData()
+
+    private val _isGetAllowed = MutableLiveData<Boolean>()
+    val isGetAllowed: LiveData<Boolean> get() = _isGetAllowed
 
     lateinit var tempTodoListItem : TodoListItem
 
@@ -31,12 +34,14 @@ class TodoListViewModel @Inject constructor(private val repo:Repository) : ViewM
         }
     }
 
-    //TODO: Fix this
-//    suspend fun getTodoById(id : String) : TodoListItem{
-//        viewModelScope.launch (Dispatchers.Default) {
-//            return repo.getTodoById(id)
-//        }
-//    }
+    fun getTodoById(id : String) {
+        _isGetAllowed.postValue(false)
+        viewModelScope.launch (Dispatchers.Default) {
+            tempTodoListItem = repo.getTodoById(id)
+        }.invokeOnCompletion {
+            _isGetAllowed.postValue(true)
+        }
+    }
 
     fun deleteTodo(todoListItem : TodoListItem){
         viewModelScope.launch (Dispatchers.Default) {
@@ -44,10 +49,15 @@ class TodoListViewModel @Inject constructor(private val repo:Repository) : ViewM
         }
     }
 
-    fun updateTodo(todoListItem: TodoListItem){
+    fun deleteTodoById(id : String){
+        viewModelScope.launch (Dispatchers.Default) {
+            repo.deleteTodoById(id)
+        }
+    }
+
+    fun updateTodo(todoListItem : TodoListItem){
         viewModelScope.launch (Dispatchers.Default) {
             repo.updateTodo(todoListItem)
         }
     }
-
 }

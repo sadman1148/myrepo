@@ -1,4 +1,4 @@
-package com.redenvy.justdoit.data.localDB
+package com.redenvy.justdoit.data.local
 
 import androidx.room.Database
 import androidx.room.RoomDatabase

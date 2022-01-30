@@ -1,7 +1,7 @@
 package com.redenvy.justdoit.di
 
-import com.redenvy.justdoit.data.network.APIService
-import com.redenvy.justdoit.data.network.APIurl
+import com.redenvy.justdoit.data.Remote.network.APIService
+import com.redenvy.justdoit.data.Remote.network.APIurl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -26,7 +26,7 @@ object NetworkModule {
 
     @Singleton
     @Provides
-    fun provideApiService(retrofit: Retrofit): APIService{
+    fun provideApiService(retrofit: Retrofit): APIService {
         return retrofit.create(APIService::class.java)
     }
 }

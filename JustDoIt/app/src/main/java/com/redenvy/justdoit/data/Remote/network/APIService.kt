@@ -1,6 +1,6 @@
-package com.redenvy.justdoit.data.network
+package com.redenvy.justdoit.data.Remote.network
 
-import com.redenvy.justdoit.data.RemoteDB.TodoList
+import com.redenvy.justdoit.data.Remote.TodoList
 import retrofit2.http.GET
 
 interface APIService {

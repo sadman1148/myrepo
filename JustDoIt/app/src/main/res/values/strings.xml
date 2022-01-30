@@ -12,9 +12,6 @@
     <string name="copyright">© 2022 BJIT Limited</string>
     <string name="hr6">6 hours</string>
     <string name="hr12">12 hours</string>
-    <string name="syncNow_Desc">Manually perform a sync right now</string>
-    <string name="syncNow_title">Sync now</string>
-    <string name="syncNow_key">sync_Now</string>
     <string name="syncInterval_Key">sync_time</string>
     <string name="syncInterval_title">Sync interval</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -35,8 +32,13 @@
     <string name="comma_title">, Title</string>
     <string name="subtask_in_textform">Subtask</string>
     <string name="comma_subtask">, Subtask</string>
-    <string name="please_add_intextform">Please add </string>
+    <string name="please_add_intextform">Please add -‏‏‎ ‎</string>
     <string name="todo_updated">Todo Updated</string>
     <string name="no_new_changes">No new changes</string>
     <string name="no_data_in_textfield">Please add data to empty textfields</string>
+    <string name="theme_switch_key">theme</string>
+    <string name="sync_with_online">Sync now</string>
+    <string name="sync_now">Sync from online database?</string>
+    <string name="sync_complete">Sync Complete</string>
+    <string name="future_time_select">Please select a Future time</string>
 </resources>

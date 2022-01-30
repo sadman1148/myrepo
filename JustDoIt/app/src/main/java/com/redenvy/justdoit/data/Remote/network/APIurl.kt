@@ -1,4 +1,4 @@
-package com.redenvy.justdoit.data.network
+package com.redenvy.justdoit.data.Remote.network
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

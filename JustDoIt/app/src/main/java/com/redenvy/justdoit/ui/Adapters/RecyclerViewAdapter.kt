@@ -7,7 +7,7 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.google.gson.Gson
 import com.redenvy.justdoit.R
-import com.redenvy.justdoit.data.localDB.TodoListItem
+import com.redenvy.justdoit.data.local.TodoListItem
 import com.redenvy.justdoit.databinding.RecyclerItemBinding
 import com.redenvy.justdoit.utils.Constants
 import java.text.SimpleDateFormat
@@ -22,7 +22,10 @@ class RecyclerViewAdapter : RecyclerView.Adapter<RecyclerViewAdapter.TodoViewHol
         notifyDataSetChanged()
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerViewAdapter.TodoViewHolder {
+    override fun onCreateViewHolder(
+        parent: ViewGroup,
+        viewType: Int
+    ): RecyclerViewAdapter.TodoViewHolder {
         val bind = RecyclerItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return TodoViewHolder(bind)
     }
@@ -32,11 +35,12 @@ class RecyclerViewAdapter : RecyclerView.Adapter<RecyclerViewAdapter.TodoViewHol
         fun bind(todo: TodoListItem) {
             binding.apply {
                 itemTitle.setText(todo.title)
-                val datetime = SimpleDateFormat(Constants.FORMAT_TO_STRING_PATTERN).format(todo.time)
-                val timeList : List<String> = datetime.split(" ")
-                itemTime.setText(timeList[4]+" "+timeList[5])
-                itemDate.setText(timeList[0]+" "+timeList[1]+" "+timeList[2]+" "+timeList[3])
-                touchable.setOnClickListener(){
+                val datetime =
+                    SimpleDateFormat(Constants.FORMAT_TO_STRING_PATTERN).format(todo.time)
+                val timeList: List<String> = datetime.split(" ")
+                itemTime.setText(timeList[4] + " " + timeList[5])
+                itemDate.setText(timeList[0] + " " + timeList[1] + " " + timeList[2] + " " + timeList[3])
+                touchable.setOnClickListener() {
                     it.findNavController().navigate(
                         R.id.action_mainFragment_to_detailFragment,
                         bundleOf(Constants.BUNDLE_NAME to Gson().toJson(todo))
@@ -46,12 +50,10 @@ class RecyclerViewAdapter : RecyclerView.Adapter<RecyclerViewAdapter.TodoViewHol
         }
     }
 
-    override fun onBindViewHolder(holder : RecyclerViewAdapter.TodoViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: RecyclerViewAdapter.TodoViewHolder, position: Int) {
         holder.bind(todos[position])
     }
 
     // return the number of the items in the list
-    override fun getItemCount(): Int {
-        return todos.size
-    }
+    override fun getItemCount(): Int = todos.size
 }

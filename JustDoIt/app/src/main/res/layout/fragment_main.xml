@@ -10,11 +10,11 @@
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/appBanner"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/logoText"
@@ -32,6 +32,28 @@
             android:textSize="@dimen/sp30"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/addButton"
+            android:layout_width="@dimen/iconSize30"
+            android:layout_height="@dimen/iconSize30"
+            android:layout_gravity="center"
+            android:layout_marginEnd="@dimen/dp20"
+            android:backgroundTint="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_baseline_add_24" />
+
+        <ImageView
+            android:id="@+id/syncIcon"
+            android:layout_width="@dimen/iconSize30"
+            android:layout_height="@dimen/iconSize30"
+            android:layout_gravity="center"
+            android:layout_marginEnd="@dimen/dp20"
+            android:backgroundTint="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_baseline_sync_24" />
 
         <ImageView
             android:id="@+id/settingsIcon"
@@ -74,36 +96,36 @@
 
     <TextView
         android:id="@+id/noTodoText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp5"
+        android:alpha="0.5"
+        android:text="@string/you_have_nothing_todo"
         android:textColor="@color/titles"
         android:textSize="@dimen/sp16"
         android:visibility="invisible"
-        android:layout_margin="@dimen/dp5"
-        android:alpha="0.5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/you_have_nothing_todo"
         app:layout_constraintEnd_toEndOf="@+id/noTodoImage"
         app:layout_constraintStart_toStartOf="@+id/noTodoImage"
         app:layout_constraintTop_toBottomOf="@+id/noTodoImage" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/addButton"
-        android:foregroundGravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/dp25"
-        android:clickable="true"
-        android:backgroundTint="@color/background"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/ic_baseline_add_24" />
+<!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--        android:id="@+id/addButton"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_margin="@dimen/dp25"-->
+<!--        android:backgroundTint="@color/background"-->
+<!--        android:clickable="true"-->
+<!--        android:foregroundGravity="center"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:srcCompat="@drawable/ic_baseline_add_24" />-->
 
-    <ImageView
-        android:layout_width="@dimen/dp70"
-        android:layout_height="@dimen/dp70"
-        android:layout_margin="@dimen/dp18"
-        android:src="@drawable/ic_baseline_play_circle_filled_24"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+<!--    <ImageView-->
+<!--        android:layout_width="@dimen/dp70"-->
+<!--        android:layout_height="@dimen/dp70"-->
+<!--        android:layout_margin="@dimen/dp18"-->
+<!--        android:src="@drawable/ic_baseline_play_circle_filled_24"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,8 +1,8 @@
 <PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <PreferenceCategory app:title="@string/display">
-
         <SwitchPreferenceCompat
+            app:key="@string/theme_switch_key"
             app:summaryOff="@string/off"
             app:summaryOn="@string/on"
             app:title="@string/nightmode" />
@@ -24,11 +24,6 @@
             app:key="@string/syncInterval_Key"
             app:title="@string/syncInterval_title"
             app:useSimpleSummaryProvider="true" />
-
-        <Preference
-            app:key="@string/syncNow_key"
-            app:summary="@string/syncNow_Desc"
-            app:title="@string/syncNow_title" />
 
     </PreferenceCategory>
 

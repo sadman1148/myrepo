@@ -14,13 +14,11 @@ import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.redenvy.justdoit.R
 import com.redenvy.justdoit.ViewModel.TodoListViewModel
-import com.redenvy.justdoit.data.localDB.TodoListItem
+import com.redenvy.justdoit.data.local.TodoListItem
 import com.redenvy.justdoit.databinding.FragmentDetailBinding
-import com.redenvy.justdoit.ui.Activity.MainActivity
 import com.redenvy.justdoit.utils.Constants
+import com.redenvy.justdoit.utils.CustomFunctions
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.coroutineScope
 import java.text.SimpleDateFormat
 
 @AndroidEntryPoint
@@ -28,6 +26,7 @@ class DetailFragment : Fragment() {
     var alertDialog: AlertDialog? = null
     private lateinit var todo: TodoListItem
     private lateinit var receivedTodo: String
+    private lateinit var tempTodo: TodoListItem
     private lateinit var binding: FragmentDetailBinding
 
     private val viewModel: TodoListViewModel by viewModels()
@@ -43,30 +42,34 @@ class DetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initView()
+        initObserver()
         initClicks()
+    }
+
+    private fun initObserver(){
+        viewModel.isGetAllowed.observe(viewLifecycleOwner){
+            if(it){
+                todo = viewModel.tempTodoListItem
+                binding.detailTitle.setText(todo.title)
+                val datetime = SimpleDateFormat(Constants.FORMAT_TO_STRING_PATTERN).format(todo.time)
+                val timeList : List<String> = datetime.split(" ")
+
+                binding.detailDate.setText(timeList[1]+" "+timeList[2]+"\n"+timeList[3])
+                binding.detailTime.setText(timeList[4]+" "+timeList[5]+"\n"+timeList[0])
+
+                var subTodo : String = ""
+                for (thing in todo.todo){
+                    subTodo += "• "+thing+"\n"
+                }
+                binding.detailSubTodo.setText(subTodo)
+            }
+        }
     }
 
     private fun initView() {
         arguments?.getString(Constants.BUNDLE_NAME)?.let { receivedTodo = it }
-        val type = object : TypeToken<TodoListItem>() {}.type
-
-        val tempTodo : TodoListItem = Gson().fromJson(receivedTodo, type)
-
-        //TODO: FIX THIS
-//        todo = viewModel.getTodoById(tempTodo.id)
-
-        binding.detailTitle.setText(todo.title)
-        val datetime = SimpleDateFormat(Constants.FORMAT_TO_STRING_PATTERN).format(todo.time)
-        val timeList : List<String> = datetime.split(" ")
-
-        binding.detailDate.setText(timeList[1]+" "+timeList[2]+"\n"+timeList[3])
-        binding.detailTime.setText(timeList[4]+" "+timeList[5]+"\n"+timeList[0])
-
-        var subTodo : String = ""
-        for (thing in todo.todo){
-            subTodo += "• "+thing+"\n"
-        }
-        binding.detailSubTodo.setText(subTodo)
+        tempTodo = Gson().fromJson(receivedTodo, CustomFunctions.getTodoType())
+        viewModel.getTodoById(tempTodo.id)
     }
 
     private fun initClicks() {

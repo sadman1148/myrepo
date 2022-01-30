@@ -4,14 +4,14 @@
     android:layout_height="wrap_content">
 
     <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/touchable"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/dp10"
+        android:layout_marginHorizontal="@dimen/dp15"
         android:layout_marginBottom="@dimen/dp10"
         android:background="@drawable/card_shape">
 
             <androidx.appcompat.widget.LinearLayoutCompat
-                android:id="@+id/touchable"
                 android:layout_width="@dimen/dp0"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"

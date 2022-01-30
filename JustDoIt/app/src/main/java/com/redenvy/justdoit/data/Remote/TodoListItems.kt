@@ -1,4 +1,4 @@
-package com.redenvy.justdoit.data.RemoteDB
+package com.redenvy.justdoit.data.Remote
 
 import com.google.gson.annotations.SerializedName
 

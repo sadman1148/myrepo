@@ -1,9 +1,9 @@
 package com.redenvy.justdoit.data.repository
 
 import androidx.lifecycle.LiveData
-import com.redenvy.justdoit.data.localDB.TodoDAO
-import com.redenvy.justdoit.data.localDB.TodoListItem
-import com.redenvy.justdoit.data.network.APIService
+import com.redenvy.justdoit.data.local.TodoDAO
+import com.redenvy.justdoit.data.local.TodoListItem
+import com.redenvy.justdoit.data.Remote.network.APIService
 import com.redenvy.justdoit.utils.Constants
 import java.text.SimpleDateFormat
 import java.util.*
@@ -26,12 +26,20 @@ class Repository @Inject constructor(private val apiService: APIService, private
         }
     }
 
+    suspend fun getLatestTodo() : List<TodoListItem>{
+        return todoDAO.getLatestTodo()
+    }
+
     suspend fun getTodoById(id : String) : TodoListItem{
         return todoDAO.getTodoById(id)
     }
 
     fun getData() : LiveData<List<TodoListItem>>{
         return todoDAO.getData()
+    }
+
+    suspend fun deleteTodoById(id: String){
+        todoDAO.deleteTodoById(id)
     }
 
     suspend fun updateTodo(todoListItem: TodoListItem) {

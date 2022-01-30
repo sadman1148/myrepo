@@ -2,7 +2,7 @@ package com.redenvy.justdoit.di
 
 import android.content.Context
 import androidx.room.Room
-import com.redenvy.justdoit.data.localDB.TodoDatabase
+import com.redenvy.justdoit.data.local.TodoDatabase
 import com.redenvy.justdoit.utils.Constants
 import com.redenvy.justdoit.utils.TodoConverter
 import dagger.Module
