@@ -10,64 +10,82 @@
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:background="@drawable/homebackground"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <FrameLayout
+        <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:layout_height="wrap_content">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="@dimen/dp0"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/sync_icon"
+                    android:layout_width="@dimen/dp35"
+                    android:layout_height="@dimen/dp35"
+                    android:layout_margin="@dimen/dp30"
+                    android:src="@drawable/cloud_sync" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <ImageView
+                android:id="@+id/settings_icon"
+                android:layout_width="@dimen/dp30"
+                android:layout_height="@dimen/dp30"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="@dimen/dp30"
+                android:src="@drawable/gear" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
                 android:orientation="vertical"
-                android:background="@drawable/background">
-
-                <TextView
-                    android:id="@+id/greetings"
+                android:layout_weight="1"
+                android:layout_width="@dimen/dp0"
+                android:layout_height="wrap_content">
+                <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:paddingHorizontal="40dp"
-                    android:textColor="@color/colorAccent"
-                    android:textSize="18sp" />
+                    android:layout_marginStart="@dimen/dp30"
+                    android:layout_marginTop="@dimen/dp30"
+                    android:text="@string/hello_adrika"
+                    android:textColor="@color/textColor"
+                    android:textSize="@dimen/sp30" />
 
-                <TextView
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/time_of_day"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="All tasks"
-                    android:paddingHorizontal="40dp"
-                    android:textColor="@color/colorAccent"
-                    android:textSize="28sp"
-                    android:textStyle="bold"
-                    tools:ignore="MissingPrefix" />
+                    android:layout_marginStart="@dimen/dp30"
+                    android:layout_marginTop="@dimen/dp10"
+                    android:layout_marginBottom="@dimen/dp20"
+                    android:textColor="@color/subTextColor"
+                    android:textSize="@dimen/sp16" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
 
-            </LinearLayout>
+            <ImageView
+                android:layout_marginEnd="@dimen/dp30"
+                android:layout_marginTop="@dimen/dp30"
+                android:src="@drawable/girl"
+                android:layout_width="@dimen/dp70"
+                android:layout_height="@dimen/dp70"/>
 
-            <androidx.appcompat.widget.SwitchCompat
-                android:id="@+id/themeChange"
-                android:layout_width="40dp"
-                android:layout_height="30dp"
-                android:layout_gravity="right|center"
-                android:layout_marginRight="50dp" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
 
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:paddingHorizontal="20dp"
-                android:layout_marginTop="100dp">
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/taskRecycler"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
-
-            </FrameLayout>
-
-
-        </FrameLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/taskRecycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -75,10 +93,10 @@
         android:id="@+id/addTask"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
         android:layout_margin="20dp"
-        android:backgroundTint="@color/colorAccent"
-        android:src="@drawable/ic_add_black_24dp" />
+        android:backgroundTint="@color/bright_yellow"
+        android:src="@drawable/add_24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

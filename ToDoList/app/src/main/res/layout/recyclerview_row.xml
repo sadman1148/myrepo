@@ -3,76 +3,102 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="150dp"
-    app:cardCornerRadius="10dp"
-    app:cardElevation="5dp"
+    android:layout_height="@dimen/dp150"
+    app:cardCornerRadius="@dimen/dp20"
+    app:cardElevation="@dimen/dp10"
     app:cardUseCompatPadding="true"
-    app:contentPadding="10dp">
+    app:contentPadding="@dimen/dp10">
 
-    <LinearLayout
+    <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/recyclerItem"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="26dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="5dp"
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp5"
+            android:layout_marginEnd="@dimen/dp15"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/month"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Nov"
+                android:textColor="@color/textColor"
+                android:textSize="@dimen/sp20" />
+
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="10"
+                android:textColor="@color/textColor"
+                android:textSize="@dimen/sp20" />
+
+            <TextView
+                android:id="@+id/year"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="1998"
+                android:textColor="@color/textColor"
+                android:textSize="@dimen/sp20" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <View
+            android:layout_width="@dimen/dp1"
+            android:layout_height="match_parent"
+            android:background="@color/textColor" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="@dimen/dp0"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:layout_weight="1"
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/tvTime"
+                android:id="@+id/todo_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="18"
-                android:textColor="@color/colorAccent"
-                android:textSize="24sp" />
+                android:layout_marginStart="@dimen/dp10"
+                android:textColor="@color/textColor"
+                android:textSize="@dimen/sp20"
+                tools:text="Happy Birthday" />
 
-        </LinearLayout>
-
-        <View
-            android:layout_width="0.5dp"
+        </androidx.appcompat.widget.LinearLayoutCompat>
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:alpha="0.5"
-            android:background="@android:color/black" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_weight="0.2"
+            android:layout_marginStart="@dimen/dp15"
+            android:layout_marginEnd="@dimen/dp5"
             android:orientation="vertical">
-
-            <LinearLayout
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/time"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:layout_gravity="center_horizontal"
+                android:text="07:00 AM"
+                android:textColor="@color/textColor"
+                android:textSize="@dimen/sp30" />
+            <TextView
+                android:id="@+id/day_of_week"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:text="Tue"
+                android:textColor="@color/textColor"
+                android:textSize="@dimen/sp30" />
 
-                <TextView
-                    android:id="@+id/tvTitle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:singleLine="true"
-                    android:textColor="@color/textColor"
-                    android:textSize="20sp"
-                    tools:text="Full house" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
 
-                <androidx.appcompat.widget.AppCompatCheckedTextView
+    </androidx.appcompat.widget.LinearLayoutCompat>
 
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="20sp"/>
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-    </LinearLayout>
 </androidx.cardview.widget.CardView>

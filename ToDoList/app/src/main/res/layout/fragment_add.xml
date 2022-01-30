@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="@dimen/plusImageViewLayoutMarginTop"
-            android:background="@drawable/ic_add_black_24dp"
+            android:background="@drawable/add_24dp"
             android:scaleType="centerCrop" />
 
         <androidx.appcompat.widget.AppCompatTextView

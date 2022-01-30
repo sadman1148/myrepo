@@ -18,7 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/addATaskTextViewLayoutMarginTop"
-            android:background="@color/colorAccent"
+            android:background="@color/bright_yellow"
             android:gravity="center"
             android:text="@string/taskDetails"
             android:textColor="@color/white"
