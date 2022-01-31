@@ -28,16 +28,18 @@
             android:layout_marginVertical="@dimen/dp20"
             android:gravity="center_vertical">
 
-            <EditText
+            <TextView
                 android:id="@+id/newTodoTime"
                 android:layout_width="@dimen/dp0"
                 android:layout_height="@dimen/dp60"
                 android:layout_weight="1"
                 android:background="@drawable/custom_input"
+                android:clickable="false"
                 android:gravity="center_vertical"
                 android:paddingHorizontal="@dimen/dp10"
                 android:textSize="@dimen/sp18"
                 app:drawableEndCompat="@drawable/ic_baseline_alarm_24" />
+
         </androidx.appcompat.widget.LinearLayoutCompat>
 
         <EditText
@@ -49,7 +51,7 @@
             android:clickable="false"
             android:gravity="start"
             android:inputType="textMultiLine"
-            android:paddingStart="@dimen/dp10"
+            android:paddingHorizontal="@dimen/dp10"
             android:paddingTop="@dimen/dp10" />
 
         <androidx.appcompat.widget.LinearLayoutCompat

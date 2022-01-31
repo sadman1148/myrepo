@@ -69,6 +69,7 @@
     </androidx.appcompat.widget.LinearLayoutCompat>
 
     <ScrollView
+        android:scrollbars="none"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp0"
         app:layout_constraintBottom_toBottomOf="parent"

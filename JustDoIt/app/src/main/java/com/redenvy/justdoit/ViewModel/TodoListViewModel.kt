@@ -4,7 +4,6 @@ import androidx.lifecycle.*
 import com.redenvy.justdoit.data.Remote.TodoList
 import com.redenvy.justdoit.data.local.TodoListItem
 import com.redenvy.justdoit.data.repository.Repository
-import com.redenvy.justdoit.utils.DataState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -12,28 +11,39 @@ import javax.inject.Inject
 
 @HiltViewModel
 class TodoListViewModel @Inject constructor(private val repo:Repository) : ViewModel(),LifecycleObserver {
-    private val _todoList = MutableLiveData<DataState<TodoList>>()
-    val todoLists: LiveData<DataState<TodoList>> get() = _todoList
+    private val _todoList = MutableLiveData<List<TodoList>>()
+    val todoLists: LiveData<List<TodoList>> get() = _todoList
 
+    // This will be observed for local db changes
     val localTodoList: LiveData<List<TodoListItem>> get() = repo.getData()
 
+    // This will replicate an On Completion
     private val _isGetAllowed = MutableLiveData<Boolean>()
     val isGetAllowed: LiveData<Boolean> get() = _isGetAllowed
 
     lateinit var tempTodoListItem : TodoListItem
 
+    /**
+     * this function syncs the local database with online cloud data
+     */
     fun syncToLocalDbFromAPI() {
         viewModelScope.launch (Dispatchers.Default) {
             repo.syncToLocalDbFromAPI()
         }
     }
 
+    /**
+     * this function inserts new TodoListItems in the local database
+     */
     fun insertNewTodo(todoListItem : TodoListItem){
         viewModelScope.launch (Dispatchers.Default) {
             repo.insertData(todoListItem)
         }
     }
 
+    /**
+     * returns a TodoListItem
+     */
     fun getTodoById(id : String) {
         _isGetAllowed.postValue(false)
         viewModelScope.launch (Dispatchers.Default) {

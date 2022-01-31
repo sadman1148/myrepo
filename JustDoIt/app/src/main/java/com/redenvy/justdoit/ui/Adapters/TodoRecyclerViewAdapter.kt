@@ -12,7 +12,7 @@ import com.redenvy.justdoit.databinding.RecyclerItemBinding
 import com.redenvy.justdoit.utils.Constants
 import java.text.SimpleDateFormat
 
-class RecyclerViewAdapter : RecyclerView.Adapter<RecyclerViewAdapter.TodoViewHolder>() {
+class TodoRecyclerViewAdapter : RecyclerView.Adapter<TodoRecyclerViewAdapter.TodoViewHolder>() {
 
     private val todos = mutableListOf<TodoListItem>()
 
@@ -25,7 +25,7 @@ class RecyclerViewAdapter : RecyclerView.Adapter<RecyclerViewAdapter.TodoViewHol
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): RecyclerViewAdapter.TodoViewHolder {
+    ): TodoRecyclerViewAdapter.TodoViewHolder {
         val bind = RecyclerItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return TodoViewHolder(bind)
     }
@@ -50,7 +50,7 @@ class RecyclerViewAdapter : RecyclerView.Adapter<RecyclerViewAdapter.TodoViewHol
         }
     }
 
-    override fun onBindViewHolder(holder: RecyclerViewAdapter.TodoViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: TodoRecyclerViewAdapter.TodoViewHolder, position: Int) {
         holder.bind(todos[position])
     }
 

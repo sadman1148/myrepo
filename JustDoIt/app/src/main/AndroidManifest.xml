@@ -27,25 +27,26 @@
         </activity>
 
         <service
-            android:name=".services.NotificationJobService"
+            android:name=".utils.services.ForegroundService"
             android:exported="false"
             android:permission="android.permission.BIND_JOB_SERVICE" />
         <service
-            android:name=".services.NotificationForegroundService"
+            android:name=".utils.services.NotificationJob"
             android:exported="false"
             android:permission="android.permission.BIND_JOB_SERVICE"/>
         <service
-            android:name=".services.SyncJobService"
+            android:name=".utils.services.SyncJob"
             android:exported="false"
             android:permission="android.permission.BIND_JOB_SERVICE" />
-        <service
-            android:name=".services.SyncForegroundService"
-            android:exported="false"
-            android:permission="android.permission.BIND_JOB_SERVICE"/>
+
+        <receiver
+            android:name=".utils.services.MyBroadcastReceiver"
+            android:exported="true" />
 
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+
     </application>
 
 </manifest>

@@ -80,7 +80,7 @@ class DetailFragment : Fragment() {
                 alertDialogBuilder.setMessage("Are you sure you want to delete?")
                 alertDialogBuilder.setPositiveButton("Yes") { _: DialogInterface, _: Int ->
                     viewModel.deleteTodo(todo)
-                    findNavController().navigate(R.id.action_detailFragment_to_mainFragment)
+                    findNavController().navigateUp()
                 }
                 alertDialogBuilder.setNegativeButton("No", { dialogInterface: DialogInterface, i: Int -> })
                 alertDialog = alertDialogBuilder.create()

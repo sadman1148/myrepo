@@ -5,6 +5,7 @@ import com.redenvy.justdoit.data.local.TodoDAO
 import com.redenvy.justdoit.data.local.TodoListItem
 import com.redenvy.justdoit.data.Remote.network.APIService
 import com.redenvy.justdoit.utils.Constants
+import timber.log.Timber
 import java.text.SimpleDateFormat
 import java.util.*
 import javax.inject.Inject
@@ -39,6 +40,7 @@ class Repository @Inject constructor(private val apiService: APIService, private
     }
 
     suspend fun deleteTodoById(id: String){
+        Timber.e("delete hocche")
         todoDAO.deleteTodoById(id)
     }
 

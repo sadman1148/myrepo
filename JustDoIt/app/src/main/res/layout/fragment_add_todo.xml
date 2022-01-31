@@ -53,7 +53,7 @@
             android:gravity="start"
             android:hint="@string/sub_todo"
             android:inputType="textMultiLine"
-            android:paddingStart="@dimen/dp10"
+            android:paddingHorizontal="@dimen/dp10"
             android:paddingTop="@dimen/dp10" />
 
         <com.google.android.material.button.MaterialButton

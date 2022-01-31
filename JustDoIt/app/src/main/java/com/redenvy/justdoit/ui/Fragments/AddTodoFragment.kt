@@ -72,12 +72,15 @@ class AddTodoFragment : Fragment() {
                     binding.newSubtodo.requestFocus()
                     allow = false
                 }
-                val time =
-                    SimpleDateFormat(Constants.PARSE_FROM_STRING_PATTERN).parse(binding.newTodoTime.text.toString()).time
-                if (time <= Calendar.getInstance().timeInMillis) {
-                    timeAllow = false
-                } else {
-                    timeAllow = true
+
+                if(!binding.newTodoTime.text.toString().equals("")){
+                    val time =
+                        SimpleDateFormat(Constants.PARSE_FROM_STRING_PATTERN).parse(binding.newTodoTime.text.toString()).time
+                    if (time <= Calendar.getInstance().timeInMillis) {
+                        timeAllow = false
+                    } else {
+                        timeAllow = true
+                    }
                 }
 
                 if (!allow) {
@@ -96,7 +99,7 @@ class AddTodoFragment : Fragment() {
                             ).show()
                         } else {
                             val subTodoList: List<String> =
-                                binding.newSubtodo.text.toString().split("\n")
+                                binding.newSubtodo.text.toString().split("\n").dropLastWhile { it == "" }
                             val timeInMili =
                                 SimpleDateFormat(Constants.PARSE_FROM_STRING_PATTERN).parse(binding.newTodoTime.text.toString()).time
                             viewModel.insertNewTodo(

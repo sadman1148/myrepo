@@ -1,8 +1,8 @@
 package com.redenvy.justdoit.ui.Fragments
 
 import android.app.AlertDialog
+import android.content.Context
 import android.content.DialogInterface
-import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -10,27 +10,27 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.LifecycleOwner
-import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.google.gson.Gson
 import com.redenvy.justdoit.R
 import com.redenvy.justdoit.ViewModel.TodoListViewModel
 import com.redenvy.justdoit.databinding.FragmentMainBinding
-import com.redenvy.justdoit.ui.Adapters.RecyclerViewAdapter
-import com.redenvy.justdoit.utils.Constants
+import com.redenvy.justdoit.ui.Adapters.TodoRecyclerViewAdapter
 import com.redenvy.justdoit.utils.hide
 import com.redenvy.justdoit.utils.show
 import dagger.hilt.android.AndroidEntryPoint
+import android.net.NetworkInfo
+
+import android.net.ConnectivityManager
+import com.redenvy.justdoit.utils.BroadCaster
 
 @AndroidEntryPoint
 class MainFragment : Fragment() {
     var alertDialog: AlertDialog? = null
     private lateinit var binding: FragmentMainBinding
     private val viewModel: TodoListViewModel by viewModels()
-    private val recyclerViewAdapter: RecyclerViewAdapter by lazy {
-        RecyclerViewAdapter()
+    private val todoRecyclerViewAdapter: TodoRecyclerViewAdapter by lazy {
+        TodoRecyclerViewAdapter()
     }
 
     override fun onCreateView(
@@ -53,27 +53,19 @@ class MainFragment : Fragment() {
     private fun initObserver() {
         viewModel.localTodoList.observe(viewLifecycleOwner) {
             if (it.isNotEmpty()) {
-                val intent = Intent(Constants.INTENT_ACTION).putExtra(
-                    Constants.BUNDLE_NAME,
-                    Gson().toJson(it.first())
-                )
-                LocalBroadcastManager.getInstance(requireContext()).sendBroadcast(intent)
-                requireContext().sendBroadcast(Intent(Constants.INTENT_ACTION)
-                    .putExtra(Constants.BUNDLE_NAME, Gson().toJson(it.first()))
-                )
+                BroadCaster.sendNewBroadcast(requireContext())
             }
         }
     }
 
-
     private fun initRecycler() {
         binding.recycler.apply {
             layoutManager = LinearLayoutManager(context)
-            adapter = recyclerViewAdapter
+            adapter = todoRecyclerViewAdapter
         }
         viewModel.localTodoList.observe(viewLifecycleOwner) {
-            recyclerViewAdapter.addTodos(it)
-            if (recyclerViewAdapter.itemCount <= 0) {
+            todoRecyclerViewAdapter.addTodos(it)
+            if (todoRecyclerViewAdapter.itemCount <= 0) {
                 binding.noTodoImage.show()
                 binding.noTodoText.show()
             } else {
@@ -81,6 +73,19 @@ class MainFragment : Fragment() {
                 binding.noTodoText.hide()
             }
         }
+    }
+
+    /**
+     * Checks if Wifi or Data connection is ON or not. However, it does not check if the internet
+     */
+    fun isConnectingToInternet(): Boolean {
+        val connectivity =
+            requireContext().getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val info = connectivity.allNetworkInfo
+        if (info != null) for (i in info.indices) if (info[i].state == NetworkInfo.State.CONNECTED) {
+            return true
+        }
+        return false
     }
 
     private fun initOnClicks() {
@@ -96,10 +101,12 @@ class MainFragment : Fragment() {
                 alertDialogBuilder.setTitle(getString(R.string.sync_with_online))
                 alertDialogBuilder.setMessage(getString(R.string.sync_now))
                 alertDialogBuilder.setPositiveButton("Yes") { _: DialogInterface, _: Int ->
-                    viewModel.syncToLocalDbFromAPI()
-                    //TODO: Do this in a coroutine on complete
-                    Toast.makeText(context, getString(R.string.sync_complete), Toast.LENGTH_SHORT)
-                        .show()
+                    if (isConnectingToInternet()){
+                        viewModel.syncToLocalDbFromAPI()
+                    }
+                    else{
+                        Toast.makeText(context, getString(R.string.connect_to_internet), Toast.LENGTH_SHORT).show()
+                    }
                 }
                 alertDialogBuilder.setNegativeButton(
                     "No",

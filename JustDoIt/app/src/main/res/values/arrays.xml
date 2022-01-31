@@ -1,8 +1,28 @@
 <resources>
-    <!-- Time Preference -->
-    <string-array name="time_entries">
-        <item>6 hours</item>
-        <item>12 hours</item>
+
+    <!-- Dark Mode List-->
+    <string-array name="theme_entries">
+        <item>Dark Mode</item>
+        <item>Light Mode</item>
+        <item>Follow System</item>
+    </string-array>
+
+    <string-array name="theme_values">
+        <item>Dark</item>
+        <item>Light</item>
+        <item>System</item>
+    </string-array>
+
+    <string-array name="hour_entries">
+        <item>6</item>
+        <item>12</item>
+        <item>24</item>
+    </string-array>
+
+    <string-array name="hour_values">
+        <item>6</item>
+        <item>12</item>
+        <item>24</item>
     </string-array>
 
 </resources>

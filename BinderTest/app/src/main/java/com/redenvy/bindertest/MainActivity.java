@@ -16,6 +16,8 @@ public class MainActivity extends AppCompatActivity {
         binder = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binder.getRoot());
 
+        binder.bg.setBackground(R.id.background_night);
+
         binder.textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
