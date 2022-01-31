@@ -60,7 +60,7 @@ class MyBroadcastReceiver : BroadcastReceiver() {
         val jobScheduler = context.getSystemService(Context.JOB_SCHEDULER_SERVICE) as JobScheduler
         val result = jobScheduler.schedule(jobInfo)
         if (result == JobScheduler.RESULT_SUCCESS) {
-//            Timber.e("Notification job scheduled for $jsonItem")
+//            Timber.e("Notification job scheduled for $todoData")
         }
     }
 }

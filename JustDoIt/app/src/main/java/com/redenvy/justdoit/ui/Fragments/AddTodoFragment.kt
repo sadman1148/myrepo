@@ -94,7 +94,7 @@ class AddTodoFragment : Fragment() {
                         if (!timeAllow) {
                             Toast.makeText(
                                 context,
-                                getString(R.string.future_time_select),
+                                getString(R.string.enter_future_time),
                                 Toast.LENGTH_SHORT
                             ).show()
                         } else {

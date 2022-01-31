@@ -40,7 +40,6 @@ class Repository @Inject constructor(private val apiService: APIService, private
     }
 
     suspend fun deleteTodoById(id: String){
-        Timber.e("delete hocche")
         todoDAO.deleteTodoById(id)
     }
 

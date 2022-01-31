@@ -101,7 +101,7 @@ class MainFragment : Fragment() {
                 val alertDialogBuilder = AlertDialog.Builder(context)
                 alertDialogBuilder.setTitle(getString(R.string.sync_with_online))
                 alertDialogBuilder.setMessage(getString(R.string.sync_now))
-                alertDialogBuilder.setPositiveButton("Yes") { _: DialogInterface, _: Int ->
+                alertDialogBuilder.setPositiveButton(getString(R.string.yes)) { _: DialogInterface, _: Int ->
                     if (isConnectingToInternet()){
                         viewModel.syncToLocalDbFromAPI()
                     }
@@ -110,7 +110,7 @@ class MainFragment : Fragment() {
                     }
                 }
                 alertDialogBuilder.setNegativeButton(
-                    "No",
+                    getString(R.string.no),
                     { dialogInterface: DialogInterface, i: Int -> })
                 alertDialog = alertDialogBuilder.create()
                 alertDialog?.show()

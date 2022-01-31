@@ -76,13 +76,13 @@ class DetailFragment : Fragment() {
         binding.apply {
             detailDeleteButton.setOnClickListener() {
                 val alertDialogBuilder = AlertDialog.Builder(context)
-                alertDialogBuilder.setTitle("Delete Todo")
-                alertDialogBuilder.setMessage("Are you sure you want to delete?")
-                alertDialogBuilder.setPositiveButton("Yes") { _: DialogInterface, _: Int ->
+                alertDialogBuilder.setTitle(getString(R.string.todo_delete_title))
+                alertDialogBuilder.setMessage(getString(R.string.todo_delete_message))
+                alertDialogBuilder.setPositiveButton(getString(R.string.yes)) { _: DialogInterface, _: Int ->
                     viewModel.deleteTodo(todo)
                     findNavController().navigateUp()
                 }
-                alertDialogBuilder.setNegativeButton("No", { dialogInterface: DialogInterface, i: Int -> })
+                alertDialogBuilder.setNegativeButton(getString(R.string.no), { dialogInterface: DialogInterface, i: Int -> })
                 alertDialog = alertDialogBuilder.create()
                 alertDialog?.show()
             }

@@ -109,7 +109,7 @@ class UpdateTodoFragment : Fragment() {
 
                             // this if block checks if the time is valid
                             if(time<Calendar.getInstance().timeInMillis){
-                                Toast.makeText(context, "Please enter a future time", Toast.LENGTH_SHORT).show()
+                                Toast.makeText(context, getString(R.string.enter_future_time), Toast.LENGTH_SHORT).show()
                             }
 
                             // this else block will execute if time is set as a future time

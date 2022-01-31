@@ -40,7 +40,11 @@
     <string name="sync_with_online">Sync now</string>
     <string name="sync_now">Sync from online database?</string>
     <string name="sync_complete">Sync Complete</string>
-    <string name="future_time_select">Please select a Future time</string>
     <string name="connect_to_internet">Please connect to the internet</string>
     <string name="default_sync_interval">12</string>
+    <string name="todo_delete_title">Delete Todo</string>
+    <string name="todo_delete_message">Are you sure you want to delete?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="enter_future_time">Please enter a future time</string>
 </resources>
