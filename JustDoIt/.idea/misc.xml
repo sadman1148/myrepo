@@ -26,12 +26,15 @@
         <entry key="app/src/main/res/drawable/ic_baseline_delete_forever_24.xml" value="0.19635416666666666" />
         <entry key="app/src/main/res/drawable/ic_baseline_edit_24.xml" value="0.1712962962962963" />
         <entry key="app/src/main/res/drawable/ic_baseline_sync_24.xml" value="0.19635416666666666" />
+        <entry key="app/src/main/res/drawable/ic_just_do_it.xml" value="0.19635416666666666" />
         <entry key="app/src/main/res/layout/fragment_add_todo.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_detail.xml" value="0.16" />
         <entry key="app/src/main/res/layout/fragment_main.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_update_todo.xml" value="0.33" />
         <entry key="app/src/main/res/layout/recycler_item.xml" value="0.25" />
         <entry key="app/src/main/res/layout/settings_activity.xml" value="0.18020833333333333" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.19635416666666666" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.19635416666666666" />
         <entry key="app/src/main/res/xml/root_preferences.xml" value="0.33" />
       </map>
     </option>

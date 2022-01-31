@@ -15,7 +15,6 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import timber.log.Timber
 import java.util.*
 import javax.inject.Inject
 
@@ -49,11 +48,10 @@ class MyBroadcastReceiver : BroadcastReceiver() {
         jobScheduler.cancel(Constants.NEXT_NOTIFICATION_JOB_ID)
     }
 
-    private fun startJob(context: Context, time: Long, jsonItem: String) {
-        Timber.e("Job will start after ${time / (60 * 1000)} minutes and ${time / 1000} sec")
+    private fun startJob(context: Context, time: Long, todoData: String) {
         val componentName = ComponentName(context, NotificationJob::class.java)
         val persistentBundle = PersistableBundle()
-        persistentBundle.putString(Constants.BUNDLE_NAME, jsonItem)
+        persistentBundle.putString(Constants.BUNDLE_NAME, todoData)
         val jobInfo = JobInfo.Builder(Constants.NEXT_NOTIFICATION_JOB_ID, componentName)
             .setMinimumLatency(time)
             .setExtras(persistentBundle)
@@ -62,7 +60,7 @@ class MyBroadcastReceiver : BroadcastReceiver() {
         val jobScheduler = context.getSystemService(Context.JOB_SCHEDULER_SERVICE) as JobScheduler
         val result = jobScheduler.schedule(jobInfo)
         if (result == JobScheduler.RESULT_SUCCESS) {
-            Timber.e("Notification job scheduled for $jsonItem")
+//            Timber.e("Notification job scheduled for $jsonItem")
         }
     }
 }

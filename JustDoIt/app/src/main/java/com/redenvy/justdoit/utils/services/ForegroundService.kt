@@ -17,11 +17,13 @@ import com.redenvy.justdoit.utils.CustomFunctions
 class ForegroundService : Service() {
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
-        val jsonItem = intent?.extras?.get(Constants.TODO_ITEM_KEY) as String
-        val todo : TodoListItem = Gson().fromJson(jsonItem,CustomFunctions.getTodoType())
+        val todoData = intent?.extras?.get(Constants.TODO_ITEM_KEY) as String
+        val todo : TodoListItem = Gson().fromJson(todoData,CustomFunctions.getTodoType())
         val mNotificationManager = getSystemService(NOTIFICATION_SERVICE) as NotificationManager
 
-        //configure notification channel
+        // Most of the code in the services package are boiler plate code
+
+        // Building the notification channel here
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val mNotificationChannel = NotificationChannel(
@@ -33,7 +35,7 @@ class ForegroundService : Service() {
             mNotificationChannel.enableLights(true)
             mNotificationChannel.lightColor = Color.WHITE
             mNotificationManager.createNotificationChannel(mNotificationChannel)
-            // bypassing Do not disturb
+            // bypassing Do not disturb moode
             mNotificationChannel.canBypassDnd()
         }
 
@@ -45,6 +47,8 @@ class ForegroundService : Service() {
                 .setSmallIcon(R.drawable.ic_just_do_it)
                 .build()
         startForeground(Constants.FOREGROUND_SERVICE_ID, notification)
+
+        // making notification stick to the notification bar until time is up
         return START_STICKY
     }
 

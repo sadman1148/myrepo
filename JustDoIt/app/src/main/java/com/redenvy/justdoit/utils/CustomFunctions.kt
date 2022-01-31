@@ -1,8 +1,14 @@
 package com.redenvy.justdoit.utils
 
+import android.app.AlertDialog
 import android.content.Context
+import android.content.DialogInterface
 import android.content.Intent
+import android.net.ConnectivityManager
+import android.net.NetworkInfo
+import android.widget.Toast
 import com.google.gson.reflect.TypeToken
+import com.redenvy.justdoit.R
 import com.redenvy.justdoit.data.local.TodoListItem
 import com.redenvy.justdoit.ui.Activity.MainActivity
 import jhonatan.sabadi.datetimepicker.showDateAndTimePicker

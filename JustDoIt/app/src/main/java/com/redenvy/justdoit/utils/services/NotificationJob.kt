@@ -25,11 +25,7 @@ class NotificationJob : JobService() {
 
     override fun onStartJob(params: JobParameters): Boolean {
         val jsonItem = params.extras.get(Constants.BUNDLE_NAME) as String
-        executeJob(Gson().fromJson(jsonItem,CustomFunctions.getTodoType()))
-        return true
-    }
-
-    private fun executeJob(todo : TodoListItem) {
+        val todo: TodoListItem = Gson().fromJson(jsonItem,CustomFunctions.getTodoType())
         serviceIntent = Intent(this, ForegroundService::class.java)
         serviceIntent.putExtra(Constants.TODO_ITEM_KEY, Gson().toJson(todo))
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -39,7 +35,7 @@ class NotificationJob : JobService() {
         }
 
         job = CoroutineScope(Dispatchers.Default).launch {
-            // Delaytime before deleting the TodoListItem
+            // Delay time before deleting the TodoListItem
             delay(Constants.FIVE_MIN_DELAY_TIME)
             stopService(serviceIntent)
             repo.deleteTodoById(todo.id)
@@ -47,6 +43,7 @@ class NotificationJob : JobService() {
                 applicationContext,
             )
         }
+        return true
     }
 
     override fun onDestroy() {

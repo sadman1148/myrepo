@@ -23,6 +23,7 @@ import android.net.NetworkInfo
 
 import android.net.ConnectivityManager
 import com.redenvy.justdoit.utils.BroadCaster
+import com.redenvy.justdoit.utils.CustomFunctions
 
 @AndroidEntryPoint
 class MainFragment : Fragment() {
@@ -76,7 +77,7 @@ class MainFragment : Fragment() {
     }
 
     /**
-     * Checks if Wifi or Data connection is ON or not. However, it does not check if the internet
+     * Checks if Wifi or Data connection is ON or not. However, it does not check if the internet is accessible
      */
     fun isConnectingToInternet(): Boolean {
         val connectivity =

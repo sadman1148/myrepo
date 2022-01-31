@@ -11,13 +11,11 @@ import javax.inject.Inject
 
 @HiltViewModel
 class TodoListViewModel @Inject constructor(private val repo:Repository) : ViewModel(),LifecycleObserver {
-    private val _todoList = MutableLiveData<List<TodoList>>()
-    val todoLists: LiveData<List<TodoList>> get() = _todoList
 
     // This will be observed for local db changes
     val localTodoList: LiveData<List<TodoListItem>> get() = repo.getData()
 
-    // This will replicate an On Completion
+    // This will replicate an "On Completion" effect
     private val _isGetAllowed = MutableLiveData<Boolean>()
     val isGetAllowed: LiveData<Boolean> get() = _isGetAllowed
 
@@ -42,7 +40,7 @@ class TodoListViewModel @Inject constructor(private val repo:Repository) : ViewM
     }
 
     /**
-     * returns a TodoListItem
+     * assigns a TodoListItem to a late inited variable but only when it is allowed
      */
     fun getTodoById(id : String) {
         _isGetAllowed.postValue(false)
@@ -56,12 +54,6 @@ class TodoListViewModel @Inject constructor(private val repo:Repository) : ViewM
     fun deleteTodo(todoListItem : TodoListItem){
         viewModelScope.launch (Dispatchers.Default) {
             repo.delete(todoListItem)
-        }
-    }
-
-    fun deleteTodoById(id : String){
-        viewModelScope.launch (Dispatchers.Default) {
-            repo.deleteTodoById(id)
         }
     }
 
